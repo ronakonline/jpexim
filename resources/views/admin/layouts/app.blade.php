@@ -26,12 +26,17 @@
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css"
         href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('pages/data-table/css/buttons.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('pages/data-table/css/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
-         <!-- Style.css -->
+
+    <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+
+
 
 </head>
 <!-- Menu sidebar static layout -->
@@ -210,7 +215,7 @@
                     @include('admin.layouts.navigation')
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
-                           {{ $slot }}
+                            {{ $slot }}
                         </div>
                     </div>
                 </div>
@@ -253,6 +258,15 @@
     <script src="{{ asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
     <script src="{{ asset('pages\data-table\js\data-table-custom.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height:"250px"
+            });
+        });
+      </script>
 
 </body>
 
