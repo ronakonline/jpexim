@@ -1,6 +1,7 @@
 <nav class="pcoded-navbar">
     <div class="pcoded-inner-navbar main-menu">
-        <div class="pcoded-navigatio-lavel">Navigation</div>
+
+        <div class="pcoded-navigatio-lavel">Home</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ Route::is('dashboard') ? 'active' : ' ' }}">
                 <a href="{{ route('dashboard') }}" class="active">
@@ -28,6 +29,8 @@
                 </ul>
             </li>
             <!-- make link active on his route -->
+
+            <div class="pcoded-navigatio-lavel">Site Settings</div>
             <li class="{{ Route::is('admin.homeslider') ? 'active' : ' ' }}">
                 <a href="{{ route('admin.homeslider') }}">
                     <span class="pcoded-micon"><i class="feather icon-image"></i></span>

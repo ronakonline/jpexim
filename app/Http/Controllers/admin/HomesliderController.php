@@ -14,7 +14,7 @@ class HomesliderController extends Controller
 
         $images = homeslider::all();
 
-        return view('admin.homeslider')->with('images',$images);
+        return view('admin.sitesettings.homeslider')->with('images',$images);
     }
 
     public function store(Request $request){
@@ -40,6 +40,10 @@ class HomesliderController extends Controller
     public function destroy($id){
 
         $homeslider = homeslider::find($id);
+        $image_path = public_path().'/uploads/'.$homeslider->image;
+        if(file_exists($image_path)){
+            unlink($image_path);
+        }
         $homeslider->delete();
         return back()->with('success', 'Image deleted successfully');
     }

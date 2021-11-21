@@ -21,16 +21,17 @@
     <link rel="stylesheet" href="{{ asset('pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ asset('icon/feather/css/feather.css') }}">
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css"
         href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/pages/data-table/css/buttons.dataTables.min.css') }}">
+        href="{{ asset('pages/data-table/css/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
+         <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
 </head>
 <!-- Menu sidebar static layout -->
@@ -209,17 +210,7 @@
                     @include('admin.layouts.navigation')
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <div class="page-body">
-                                        {{ $slot }}
-                                    </div>
-                                </div>
-
-                                <div id="styleSelector">
-
-                                </div>
-                            </div>
+                           {{ $slot }}
                         </div>
                     </div>
                 </div>
@@ -249,23 +240,20 @@
     <script src="{{ asset('pages/widget/amchart/gauge.js') }}"></script>
     <script src="{{ asset('pages/widget/amchart/pie.js') }}"></script>
     <script src="{{ asset('pages/widget/amchart/light.js') }}"></script>
-    <!-- Custom js -->
+
     <script src="{{ asset('js/pcoded.min.js') }}"></script>
     <script src="{{ asset('js/vartical-layout.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+
+
     <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('bower_components/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}">
-    </script>
-    <script src="{{ asset('bower_components/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('assets/pages/data-table/js/jszip.min.js') }}"></script>
-    <script src="{{ asset('assets/pages/data-table/js/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('assets/pages/data-table/js/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('bower_components/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('bower_components/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+
     <script src="{{ asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+    <script src="{{ asset('pages\data-table\js\data-table-custom.js') }}"></script>
+
 </body>
 
 </html>

@@ -12,12 +12,12 @@ class ProductController extends Controller
     public function index()
     {
        $products = Product::all();
-        return view('admin.all_products', compact('products'));
+        return view('admin.products.all_products', compact('products'));
     }
 
     public function create()
     {
-        return view('admin.add_product');
+        return view('admin.products.add_product');
     }
 
     public function store(Request $request)
