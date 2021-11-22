@@ -70,4 +70,21 @@ class ProductController extends Controller
         }
 
     }
+
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+        if(!$product){
+            abort(404);
+        }else{
+
+        $productimages = $product->images()->get();
+        foreach ($productimages as $image) {
+            unlink(public_path('/uploads/'.$image->image));
+        }
+
+        $product->delete();
+        return back()->with('success', 'Product deleted successful');
+        }
+    }
 }

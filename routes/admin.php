@@ -4,6 +4,8 @@ use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
+//TODO: change cache option to file from null in .env file
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('admin/dashboard', function () {
@@ -23,4 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('admin/add-product', [ProductController::class, 'store'])->name('admin.products.create');
 
     Route::get('admin/view-product/{slug}',[ProductController::class,'view'])->name('admin.products.view');
+
+    Route::delete('admin/delete-product/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+
 });
