@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
 //TODO: change cache option to file from null in .env file
@@ -27,6 +28,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/view-product/{slug}',[ProductController::class,'view'])->name('admin.products.view');
 
     Route::delete('admin/delete-product/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+    Route::get('admin/contact_setting',[SiteSettingController::class,'contact_setting'])->name('admin.contact_setting');
+
+    Route::post('admin/contact_setting',[SiteSettingController::class,'contact_setting_store'])->name('admin.contact_setting.store');
 
 
 });

@@ -4,7 +4,7 @@
         <div class="pcoded-navigatio-lavel">Home</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ Route::is('dashboard') ? 'active' : ' ' }}">
-                <a href="{{ route('dashboard') }}" class="active">
+                <a href="{{ route('dashboard') }}" >
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>
@@ -35,6 +35,12 @@
                 <a href="{{ route('admin.homeslider') }}">
                     <span class="pcoded-micon"><i class="feather icon-image"></i></span>
                     <span class="pcoded-mtext">Home Slider</span>
+                </a>
+            </li>
+            <li class="{{ Route::is('admin.contact_setting') ? 'active' : ' ' }}">
+                <a href="{{ route('admin.contact_setting') }}">
+                    <span class="pcoded-micon"><i class="feather icon-edit"></i></span>
+                    <span class="pcoded-mtext">Contact Info</span>
                 </a>
             </li>
         </ul>
