@@ -35,6 +35,9 @@
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/slick-carousel/css/slick.css'); }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/slick-carousel/css/slick-theme.css'); }}">
+
 
 
 
@@ -257,7 +260,7 @@
 
     <script src="{{ asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script src="{{ asset('pages\data-table\js\data-table-custom.js') }}"></script>
+    <script src="{{ asset('pages/data-table/js/data-table-custom.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script>
@@ -296,6 +299,11 @@
             });
         });
     </script>
+
+     <!-- slick js -->
+     <script type="text/javascript" src="{{ asset('bower_components/slick-carousel/js/slick.min.js'); }}"></script>
+     <!-- product detail js -->
+     <script type="text/javascript" src="{{ asset('pages/product-detail/product-detail.js'); }}"></script>
 
 </body>
 

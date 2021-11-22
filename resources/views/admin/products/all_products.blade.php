@@ -63,7 +63,7 @@
                                                     <td>
 
                                                             <div class="btn-group btn-group-sm" >
-                                                                <button type="button" class="btn btn-primary m-1"><i class="feather icon-eye" ></i>View</button>
+                                                                <a href="{{ route('admin.products.view',$product->slug) }}" type="button" class="btn btn-primary m-1"><i class="feather icon-eye" ></i>View</a>
                                                                 <button type="button" class="btn btn-secondary m-1"><i class="feather icon-edit" ></i>Edit</button>
                                                                 <button type="button" class="btn btn-danger m-1"><i class="feather icon-trash" ></i>Delete</button>
                                                             </div>

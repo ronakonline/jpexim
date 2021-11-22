@@ -21,4 +21,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/add-product', [ProductController::class, 'create'])->name('admin.products.add');
 
     Route::post('admin/add-product', [ProductController::class, 'store'])->name('admin.products.create');
+
+    Route::get('admin/view-product/{slug}',[ProductController::class,'view'])->name('admin.products.view');
 });
