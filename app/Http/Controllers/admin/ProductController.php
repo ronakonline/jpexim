@@ -22,14 +22,21 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'price' => 'required||integer'
+            'price' => 'required||integer',
+            'images' =>  'bail|required',
+            'images.*' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        ],[
+            'images.*.max' => 'Image size must be less than 4MB',
+            'images.*.mimes' => 'Image type must be jpeg,png,jpg,gif,svg',
+            'images.*.image' => 'Product Image must be an image',
         ]);
 
-        $slug = Str::slug($request->title, '-');
 
+        $slug = Str::slug($request->title, '-');
 
         $product = new Product();
         $product->name = $request->title;
@@ -37,6 +44,16 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->save();
+
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+            foreach ($images as $image) {
+                $imageName = md5(rand(1000,10000)).'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('/uploads'), $imageName);
+                $product->images()->create(['image' => $imageName]);
+            }
+        }
+
 
         return back()->with('success', 'Product inserted successful');
 

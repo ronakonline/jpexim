@@ -60,21 +60,14 @@
                                                     <td class="sorting_1">{{ $product->name }}</td>
                                                     <td>{{ $product->price }}</td>
 
-                                                    <td style="white-space: nowrap; width: 1%;">
-                                                        <div class="tabledit-toolbar btn-toolbar"
-                                                            style="text-align: left;">
-                                                            <div class="btn-group btn-group-sm" style="float: none;">
-                                                                <button type="button"
-                                                                    class="tabledit-edit-button btn btn-primary waves-effect waves-light"
-                                                                    style="float: none;margin: 5px;"><span
-                                                                        class="icofont icofont-ui-edit"></span>Edit</button><button
-                                                                    type="button"
-                                                                    class="tabledit-delete-button btn btn-danger waves-effect waves-light"
-                                                                    style="float: none;margin: 5px;"><span
-                                                                        class="icofont icofont-ui-delete"></span>Delete</button>
+                                                    <td>
+
+                                                            <div class="btn-group btn-group-sm" >
+                                                                <button type="button" class="btn btn-primary m-1"><i class="feather icon-eye" ></i>View</button>
+                                                                <button type="button" class="btn btn-secondary m-1"><i class="feather icon-edit" ></i>Edit</button>
+                                                                <button type="button" class="btn btn-danger m-1"><i class="feather icon-trash" ></i>Delete</button>
                                                             </div>
 
-                                                        </div>
                                                     </td>
 
                                                 </tr>

@@ -263,10 +263,39 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                height:"250px"
+                height: "250px"
             });
         });
-      </script>
+    </script>
+
+    <script>
+        $(function() {
+            // Multiple images preview in browser
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var data = '<div class="col-4 mt-4"><img src="'+event.target.result+'" height="200px" width="200px"></div>'
+                            console.log(data);
+                            $(placeToInsertImagePreview).append(data);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+
+            };
+
+            $('#product-images').on('change', function() {
+                imagesPreview(this, 'div.preview');
+            });
+        });
+    </script>
 
 </body>
 
