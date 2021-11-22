@@ -8,38 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="#">
-    <meta name="keywords"
-        content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
+
     <!-- Favicon icon -->
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/css/bootstrap.min.css') }}">
-    <!-- radial chart.css -->
-    <link rel="stylesheet" href="{{ asset('pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ asset('icon/feather/css/feather.css') }}">
-
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
-    <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('pages/data-table/css/buttons.dataTables.min.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
-
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/slick-carousel/css/slick.css'); }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/slick-carousel/css/slick-theme.css'); }}">
-
-
-
+    @stack('css')
 
 </head>
 <!-- Menu sidebar static layout -->
@@ -238,73 +221,11 @@
     <!-- modernizr js -->
     <script type="text/javascript" src="{{ asset('bower_components/modernizr/js/modernizr.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bower_components/modernizr/js/css-scrollbars.js') }}"></script>
-    <!-- Chart js -->
-    <script type="text/javascript" src="{{ asset('bower_components/chart.js/js/Chart.js') }}"></script>
-
-    <!-- gauge js -->
-    <script src="{{ asset('pages/widget/gauge/gauge.min.js') }}"></script>
-    <script src="{{ asset('pages/widget/amchart/amcharts.js') }}"></script>
-    <script src="{{ asset('pages/widget/amchart/serial.js') }}"></script>
-    <script src="{{ asset('pages/widget/amchart/gauge.js') }}"></script>
-    <script src="{{ asset('pages/widget/amchart/pie.js') }}"></script>
-    <script src="{{ asset('pages/widget/amchart/light.js') }}"></script>
-
     <script src="{{ asset('js/pcoded.min.js') }}"></script>
     <script src="{{ asset('js/vartical-layout.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-
-
-    <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-
-    <script src="{{ asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-
-    <script src="{{ asset('pages/data-table/js/data-table-custom.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote({
-                height: "250px"
-            });
-        });
-    </script>
-
-    <script>
-        $(function() {
-            // Multiple images preview in browser
-            var imagesPreview = function(input, placeToInsertImagePreview) {
-
-                if (input.files) {
-                    var filesAmount = input.files.length;
-
-                    for (i = 0; i < filesAmount; i++) {
-                        var reader = new FileReader();
-
-                        reader.onload = function(event) {
-                            var data = '<div class="col-4 mt-4"><img src="'+event.target.result+'" height="200px" width="200px"></div>'
-                            console.log(data);
-                            $(placeToInsertImagePreview).append(data);
-                        }
-
-                        reader.readAsDataURL(input.files[i]);
-                    }
-                }
-
-            };
-
-            $('#product-images').on('change', function() {
-                imagesPreview(this, 'div.preview');
-            });
-        });
-    </script>
-
-     <!-- slick js -->
-     <script type="text/javascript" src="{{ asset('bower_components/slick-carousel/js/slick.min.js'); }}"></script>
-     <!-- product detail js -->
-     <script type="text/javascript" src="{{ asset('pages/product-detail/product-detail.js'); }}"></script>
-
+     @stack('js')
 </body>
 
 </html>

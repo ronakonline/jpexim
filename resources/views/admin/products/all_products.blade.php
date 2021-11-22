@@ -1,4 +1,12 @@
 <x-app-layout>
+
+    @push('css')
+        <!-- Data Table Css -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('pages/data-table/css/buttons.dataTables.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
+    @endpush
+
     <div class="main-body">
         <div class="page-wrapper">
             <!-- Page-header start -->
@@ -62,11 +70,15 @@
 
                                                     <td>
 
-                                                            <div class="btn-group btn-group-sm" >
-                                                                <a href="{{ route('admin.products.view',$product->slug) }}" type="button" class="btn btn-primary m-1"><i class="feather icon-eye" ></i>View</a>
-                                                                <button type="button" class="btn btn-secondary m-1"><i class="feather icon-edit" ></i>Edit</button>
-                                                                <button type="button" class="btn btn-danger m-1"><i class="feather icon-trash" ></i>Delete</button>
-                                                            </div>
+                                                        <div class="btn-group btn-group-sm">
+                                                            <a href="{{ route('admin.products.view', $product->slug) }}"
+                                                                type="button" class="btn btn-primary m-1"><i
+                                                                    class="feather icon-eye"></i>View</a>
+                                                            <button type="button" class="btn btn-secondary m-1"><i
+                                                                    class="feather icon-edit"></i>Edit</button>
+                                                            <button type="button" class="btn btn-danger m-1"><i
+                                                                    class="feather icon-trash"></i>Delete</button>
+                                                        </div>
 
                                                     </td>
 
@@ -83,5 +95,12 @@
             </div>
         </div>
     </div>
+
+    @push('js')
+
+        <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('pages/data-table/js/data-table-custom.js') }}"></script>
+    @endpush
 
 </x-app-layout>

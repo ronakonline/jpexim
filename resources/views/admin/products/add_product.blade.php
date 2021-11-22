@@ -1,4 +1,9 @@
 <x-app-layout>
+    @push('css')
+       <!-- include summernote css/js -->
+       <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    @endpush
+
     <div class="main-body">
         <div class="page-wrapper">
             <!-- Page-header start -->
@@ -115,6 +120,46 @@
             </div>
         </div>
     </div>
+
+    @push('js')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: "250px"
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+            // Multiple images preview in browser
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            var data = '<div class="col-4 mt-4"><img src="'+event.target.result+'" height="200px" width="200px"></div>'
+                            console.log(data);
+                            $(placeToInsertImagePreview).append(data);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+
+            };
+
+            $('#product-images').on('change', function() {
+                imagesPreview(this, 'div.preview');
+            });
+        });
+    </script>
+    @endpush
 
 
 </x-app-layout>

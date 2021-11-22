@@ -1,4 +1,8 @@
 <x-app-layout>
+    @push('css')
+        <!-- radial chart.css -->
+        <link rel="stylesheet" href="{{ asset('pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
+    @endpush
     <div class="main-body">
         <div class="page-wrapper">
             <div class="page-body">
@@ -73,7 +77,9 @@
                             <div class="card-header">
                                 <div class="card-header-left ">
                                     <h5>Monthly View</h5>
-                                    <span class="text-muted">For more details about usage, please refer <a href="https://www.amcharts.com/online-store/" target="_blank">amCharts</a> licences.</span>
+                                    <span class="text-muted">For more details about usage, please refer <a
+                                            href="https://www.amcharts.com/online-store/" target="_blank">amCharts</a>
+                                        licences.</span>
                                 </div>
                             </div>
                             <div class="card-block-big">
@@ -92,7 +98,8 @@
                                         <i class="feather icon-bell bg-simple-c-blue feed-icon"></i>
                                     </div>
                                     <div class="col">
-                                        <h6 class="m-b-5">You have 3 pending tasks. <span class="text-muted f-right f-13">Just Now</span></h6>
+                                        <h6 class="m-b-5">You have 3 pending tasks. <span
+                                                class="text-muted f-right f-13">Just Now</span></h6>
                                     </div>
                                 </div>
                                 <div class="row m-b-30">
@@ -100,7 +107,8 @@
                                         <i class="feather icon-shopping-cart bg-simple-c-pink feed-icon"></i>
                                     </div>
                                     <div class="col">
-                                        <h6 class="m-b-5">New order received <span class="text-muted f-right f-13">Just Now</span></h6>
+                                        <h6 class="m-b-5">New order received <span
+                                                class="text-muted f-right f-13">Just Now</span></h6>
                                     </div>
                                 </div>
                                 <div class="row m-b-30">
@@ -108,7 +116,8 @@
                                         <i class="feather icon-file-text bg-simple-c-green feed-icon"></i>
                                     </div>
                                     <div class="col">
-                                        <h6 class="m-b-5">You have 3 pending tasks. <span class="text-muted f-right f-13">Just Now</span></h6>
+                                        <h6 class="m-b-5">You have 3 pending tasks. <span
+                                                class="text-muted f-right f-13">Just Now</span></h6>
                                     </div>
                                 </div>
                                 <div class="row m-b-30">
@@ -116,7 +125,8 @@
                                         <i class="feather icon-shopping-cart bg-simple-c-pink feed-icon"></i>
                                     </div>
                                     <div class="col">
-                                        <h6 class="m-b-5">New order received <span class="text-muted f-right f-13">Just Now</span></h6>
+                                        <h6 class="m-b-5">New order received <span
+                                                class="text-muted f-right f-13">Just Now</span></h6>
                                     </div>
                                 </div>
                                 <div class="row m-b-30">
@@ -124,7 +134,8 @@
                                         <i class="feather icon-file-text bg-simple-c-green feed-icon"></i>
                                     </div>
                                     <div class="col">
-                                        <h6 class="m-b-5">You have 3 pending tasks. <span class="text-muted f-right f-13">Just Now</span></h6>
+                                        <h6 class="m-b-5">You have 3 pending tasks. <span
+                                                class="text-muted f-right f-13">Just Now</span></h6>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +159,8 @@
                                 </div>
                             </div>
                             <div class="card-block">
-                                <p class="text-c-green f-w-500"><i class="feather icon-chevrons-up m-r-5"></i> 18% High than last month</p>
+                                <p class="text-c-green f-w-500"><i class="feather icon-chevrons-up m-r-5"></i> 18% High
+                                    than last month</p>
                                 <div class="row">
                                     <div class="col-4 b-r-default">
                                         <p class="text-muted m-b-5">Overall</p>
@@ -182,7 +194,8 @@
                                 </div>
                             </div>
                             <div class="card-block">
-                                <p class="text-c-pink f-w-500"><i class="feather icon-chevrons-down m-r-15"></i> 24% High than last month</p>
+                                <p class="text-c-pink f-w-500"><i class="feather icon-chevrons-down m-r-15"></i> 24%
+                                    High than last month</p>
                                 <div class="row">
                                     <div class="col-4 b-r-default">
                                         <p class="text-muted m-b-5">Overall</p>
@@ -216,7 +229,8 @@
                                 </div>
                             </div>
                             <div class="card-block">
-                                <p class="text-c-green f-w-500"><i class="feather icon-chevrons-up m-r-15"></i> 20% High than last month</p>
+                                <p class="text-c-green f-w-500"><i class="feather icon-chevrons-up m-r-15"></i> 20%
+                                    High than last month</p>
                                 <div class="row">
                                     <div class="col-4 b-r-default">
                                         <p class="text-muted m-b-5">Overall</p>
@@ -350,7 +364,8 @@
                                         </div>
                                         <div class="col">
                                             <h6>+ 1652 Followers</h6>
-                                            <p class="text-muted m-b-0">You’re getting more and more followers, keep it up!</p>
+                                            <p class="text-muted m-b-0">You’re getting more and more followers, keep it
+                                                up!</p>
                                         </div>
                                     </div>
                                     <div class="row p-b-30">
@@ -370,7 +385,8 @@
                                         </div>
                                         <div class="col">
                                             <h6>Database backup completed!</h6>
-                                            <p class="text-muted m-b-0">Download the <span class="text-c-blue">latest backup</span>.</p>
+                                            <p class="text-muted m-b-0">Download the <span
+                                                    class="text-c-blue">latest backup</span>.</p>
                                         </div>
                                     </div>
                                     <div class="row p-b-0">
@@ -386,23 +402,27 @@
                                                     <tr>
                                                         <td class="b-none">
                                                             <a href="#!" class="align-middle">
-                                                           <img src="{{ asset('images/avatar-2.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                           <div class="d-inline-block">
-                                                               <h6>Jeny William</h6>
-                                                               <p class="text-muted m-b-0">Graphic Designer</p>
-                                                           </div>
-                                                       </a>
+                                                                <img src="{{ asset('images/avatar-2.jpg') }}"
+                                                                    alt="user image"
+                                                                    class="img-radius img-40 align-top m-r-15">
+                                                                <div class="d-inline-block">
+                                                                    <h6>Jeny William</h6>
+                                                                    <p class="text-muted m-b-0">Graphic Designer</p>
+                                                                </div>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td class="b-none">
                                                             <a href="#!" class="align-middle">
-                                                           <img src="{{ asset('images/avatar-1.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                           <div class="d-inline-block">
-                                                               <h6>John Deo</h6>
-                                                               <p class="text-muted m-b-0">Web Designer</p>
-                                                           </div>
-                                                       </a>
+                                                                <img src="{{ asset('images/avatar-1.jpg') }}"
+                                                                    alt="user image"
+                                                                    class="img-radius img-40 align-top m-r-15">
+                                                                <div class="d-inline-block">
+                                                                    <h6>John Deo</h6>
+                                                                    <p class="text-muted m-b-0">Web Designer</p>
+                                                                </div>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -433,9 +453,12 @@
                                         </div>
                                         <div class="col">
                                             <h6>John Deo</h6>
-                                            <p class="text-muted m-b-15">The trip was an amazing and a life changing experience!!</p>
-                                            <img src="{{ asset('images/mega-menu/01.jpg') }}" alt="" class="img-fluid img-100 m-r-15 m-b-10">
-                                            <img src="{{ asset('images/mega-menu/03.jpg') }}" alt="" class="img-fluid img-100 m-r-15 m-b-10">
+                                            <p class="text-muted m-b-15">The trip was an amazing and a life changing
+                                                experience!!</p>
+                                            <img src="{{ asset('images/mega-menu/01.jpg') }}" alt=""
+                                                class="img-fluid img-100 m-r-15 m-b-10">
+                                            <img src="{{ asset('images/mega-menu/03.jpg') }}" alt=""
+                                                class="img-fluid img-100 m-r-15 m-b-10">
                                         </div>
                                     </div>
                                     <div class="row p-b-30">
@@ -445,7 +468,8 @@
                                         </div>
                                         <div class="col">
                                             <h6>Administrator</h6>
-                                            <p class="text-muted m-b-0">Free courses for all our customers at A1 Conference Room - 9:00 am tomorrow!</p>
+                                            <p class="text-muted m-b-0">Free courses for all our customers at A1
+                                                Conference Room - 9:00 am tomorrow!</p>
                                         </div>
                                     </div>
                                     <div class="row p-b-30">
@@ -455,7 +479,8 @@
                                         </div>
                                         <div class="col">
                                             <h6>Jeny William</h6>
-                                            <p class="text-muted m-b-15">Happy Hour! Free drinks at <span class="text-c-blue">Cafe-Bar all </span>day long!</p>
+                                            <p class="text-muted m-b-15">Happy Hour! Free drinks at <span
+                                                    class="text-c-blue">Cafe-Bar all </span>day long!</p>
                                             <div id="markers-map" style="height:200px;width:100%"></div>
                                         </div>
                                     </div>
@@ -474,16 +499,19 @@
                             <div class="card-block">
                                 <div class="row per-task-block text-center">
                                     <div class="col-6">
-                                        <div data-label="45%" class="radial-bar radial-bar-45 radial-bar-lg radial-bar-primary"></div>
+                                        <div data-label="45%"
+                                            class="radial-bar radial-bar-45 radial-bar-lg radial-bar-primary"></div>
                                         <h6 class="text-muted">Finished</h6>
                                         <p class="text-muted">642</p>
                                         <button class="btn btn-primary btn-round btn-sm">Manage</button>
                                     </div>
                                     <div class="col-6">
-                                        <div data-label="30%" class="radial-bar radial-bar-30 radial-bar-lg radial-bar-primary"></div>
+                                        <div data-label="30%"
+                                            class="radial-bar radial-bar-30 radial-bar-lg radial-bar-primary"></div>
                                         <h6 class="text-muted">Remaining</h6>
                                         <p class="text-muted">495</p>
-                                        <button class="btn btn-primary btn-outline-primary btn-round btn-sm">Manage</button>
+                                        <button
+                                            class="btn btn-primary btn-outline-primary btn-round btn-sm">Manage</button>
                                     </div>
                                 </div>
 
@@ -505,7 +533,8 @@
                             <div class="card-block">
                                 <div class="row m-b-25">
                                     <div class="col-auto p-r-0">
-                                        <img src="{{ asset('images/mega-menu/01.jpg') }}" alt="" class="img-fluid img-50">
+                                        <img src="{{ asset('images/mega-menu/01.jpg') }}" alt=""
+                                            class="img-fluid img-50">
                                     </div>
                                     <div class="col">
                                         <h6 class="m-b-5">New able - Redesign</h6>
@@ -514,7 +543,8 @@
                                 </div>
                                 <div class="row m-b-25">
                                     <div class="col-auto p-r-0">
-                                        <img src="{{ asset('images/mega-menu/02.jpg') }}" alt="" class="img-fluid img-50">
+                                        <img src="{{ asset('images/mega-menu/02.jpg') }}" alt=""
+                                            class="img-fluid img-50">
                                     </div>
                                     <div class="col">
                                         <h6 class="m-b-5">New Admin Dashboard</h6>
@@ -523,7 +553,8 @@
                                 </div>
                                 <div class="row m-b-25">
                                     <div class="col-auto p-r-0">
-                                        <img src="{{ asset('images/mega-menu/03.jpg') }}" alt="" class="img-fluid img-50">
+                                        <img src="{{ asset('images/mega-menu/03.jpg') }}" alt=""
+                                            class="img-fluid img-50">
                                     </div>
                                     <div class="col">
                                         <h6 class="m-b-5">Logo Design</h6>
@@ -543,4 +574,18 @@
             </div>
         </div>
     </div>
+
+    @push('js')
+        <script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
+        <!-- Chart js -->
+        <script type="text/javascript" src="{{ asset('bower_components/chart.js/js/Chart.js') }}"></script>
+
+        <!-- gauge js -->
+        <script src="{{ asset('pages/widget/gauge/gauge.min.js') }}"></script>
+        <script src="{{ asset('pages/widget/amchart/amcharts.js') }}"></script>
+        <script src="{{ asset('pages/widget/amchart/serial.js') }}"></script>
+        <script src="{{ asset('pages/widget/amchart/gauge.js') }}"></script>
+        <script src="{{ asset('pages/widget/amchart/pie.js') }}"></script>
+        <script src="{{ asset('pages/widget/amchart/light.js') }}"></script>
+    @endpush
 </x-app-layout>
