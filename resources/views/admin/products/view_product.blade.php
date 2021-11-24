@@ -83,7 +83,7 @@
                                                     <h4 class="pro-desc">{{ $product->name }}</h4>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <span class="text-primary product-price">Rs 80.00</span>
+                                                    <span class="text-primary product-price">Rs {{ $product->price }}</span>
 
                                                 </div>
 
