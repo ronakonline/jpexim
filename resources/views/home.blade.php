@@ -16,9 +16,10 @@
 
             <div class="swiper-wrapper">
                 <!--Start Single Swiper Slide-->
+                @foreach ($sliders as $slider) )
                 <div class="swiper-slide">
                     <div class="image-layer"
-                        style="background-image: url(assets/images/backgrounds/main-slider-v1-1.jpg);"></div>
+                        style="background-image: url({{ asset('uploads/home_slider/' . $slider->image) }});"></div>
                     <div class="image-layer-overlay"></div>
                     <div class="container">
                         <div class="row">
@@ -43,66 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <!--End Single Swiper Slide-->
+                @endforeach
 
-                <!--Start Single Swiper Slide-->
-                <div class="swiper-slide">
-                    <div class="image-layer"
-                        style="background-image: url(assets/images/backgrounds/main-slider-v1-2.jpg);"></div>
-                    <div class="image-layer-overlay"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="main-slider-inner">
-                                    <div class="main-slider__content">
-                                        <span class="main-slider-tagline">We’re producing natural goods</span>
-                                        <h2 class="main-slider__title">Welcome to <br> Agriculture <span><span
-                                                    class="leaf"><img src="{{ asset('Frontend/assets/images/resources/leaf.png'); }}"
-                                                        alt="" /></span>Farm</span></h2>
-                                        <p class="main-slider__text">There are many of passages of lorem Ipsum, but
-                                            the majori have<br> suffered alteration in some form.</p>
-                                    </div>
-                                    <div class="main-slider__button-box">
-                                        <div class="arrow-icon"><img
-                                                src="{{ asset('Frontend/assets/images/icon/main-slider__button-arrow.png'); }}" alt="" />
-                                        </div>
-                                        <a href="#" class="thm-btn">Discover more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Swiper Slide-->
-
-                <!--Start Single Swiper Slide-->
-                <div class="swiper-slide">
-                    <div class="image-layer"
-                        style="background-image: url(assets/images/backgrounds/main-slider-v1-3.jpg);"></div>
-                    <div class="image-layer-overlay"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="main-slider-inner">
-                                    <div class="main-slider__content">
-                                        <span class="main-slider-tagline">We’re producing natural goods</span>
-                                        <h2 class="main-slider__title">Welcome to <br> Agriculture <span><span
-                                                    class="leaf"><img src="{{ asset('Frontend/assets/images/resources/leaf.png'); }}"
-                                                        alt="" /></span>Farm</span></h2>
-                                        <p class="main-slider__text">There are many of passages of lorem Ipsum, but
-                                            the majori have<br> suffered alteration in some form.</p>
-                                    </div>
-                                    <div class="main-slider__button-box">
-                                        <div class="arrow-icon"><img
-                                                src="{{ asset('Frontend/assets/images/icon/main-slider__button-arrow.png'); }}" alt="" />
-                                        </div>
-                                        <a href="#" class="thm-btn">Discover more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!--End Single Swiper Slide-->
             </div>
 

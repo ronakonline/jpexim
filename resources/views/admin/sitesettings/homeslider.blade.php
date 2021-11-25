@@ -98,7 +98,7 @@
 
                                                                 <div class="media-body">
                                                                     <div class="col-xs-12">
-                                                                        <img src="{{ asset('uploads/' . $image->image) }}"
+                                                                        <img src="{{ asset('uploads/home_slider/' . $image->image) }}"
                                                                             alt="{{ $image->image }}" width="100%"
                                                                             height="300px" style="object-fit: cover" />
                                                                     </div>

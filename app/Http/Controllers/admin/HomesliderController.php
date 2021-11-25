@@ -24,9 +24,9 @@ class HomesliderController extends Controller
 
         $image = $request->file('image');
         $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/uploads');
+        $destinationPath = public_path('/uploads/home_slider');
         $image->move($destinationPath, $input['imagename']);
-        $path = Storage::url('uploads/'.$input['imagename']);
+        $path = Storage::url('uploads/home_slider/'.$input['imagename']);
 
         $homeslider = new homeslider;
         $homeslider->image = $input['imagename'];
@@ -40,7 +40,7 @@ class HomesliderController extends Controller
     public function destroy($id){
 
         $homeslider = homeslider::find($id);
-        $image_path = public_path().'/uploads/'.$homeslider->image;
+        $image_path = public_path().'/uploads/home_slider/'.$homeslider->image;
         if(file_exists($image_path)){
             unlink($image_path);
         }
