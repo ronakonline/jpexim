@@ -14,11 +14,11 @@
 
         <ul class="mobile-nav__contact list-unstyled">
             <li>
-                <i class="icon-phone-call"></i>
+                <i class="icon-letter"></i>
                 <a href="mailto:needhelp@packageName__.com">needhelp@agriox.com</a>
             </li>
             <li>
-                <i class="icon-letter"></i>
+                <i class="icon-phone-call"></i>
                 <a href="tel:666-888-0000">666 888 0000</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
