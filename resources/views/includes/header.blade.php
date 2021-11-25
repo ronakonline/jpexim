@@ -10,9 +10,13 @@
                     <div class="social-link clearfix">
                         <ul>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            @if(!empty($settings->facebook_url))
+                            <li><a href="{{ $settings->facebook_url }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                            @endif
                             <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            @if(!empty($settings->instagram_url))
+                            <li><a href="{{ $settings->instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -24,7 +28,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="text">
-                                <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                <p><a href="mailto:{{ $settings->email; }}">{{ $settings->email; }}</a></p>
                             </div>
                         </li>
                     </ul>
@@ -66,22 +70,18 @@
 
 
                     <div class="main-header--one__bottom-right clearfix">
-                        <div class="search-cart">
-                            <a href="#" class="search search-toggler"><span
-                                    class="icon-magnifying-glass"></span></a>
-                            <a href="#" class="cart mini-cart__toggler"><span
-                                    class="icon-shopping-cart"></span></a>
-                        </div>
+                        @if($settings->phone_no)
                         <div class="contact-box">
                             <div class="icon">
                                 <span class="icon-phone-call-2"></span>
                             </div>
                             <div class="text">
                                 <p>Call Anytime</p>
-                                <a href="tel:123456789">666 888 0000</a>
+                                <a href="tel:123456789">{{ $settings->phone_no }}</a>
 
                             </div>
                         </div>
+                        @endif
                     </div>
 
                 </div>
