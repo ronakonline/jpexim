@@ -50,4 +50,10 @@ class BlogController extends Controller
 
         return redirect()->route('admin.blogs.add')->with('success', 'Blog added successfully');
     }
+
+    public function all()
+    {
+        $blogs = Blog::orderBy('id', 'desc')->get();
+        return view('admin.blogs.all_blogs', compact('blogs'));
+    }
 }

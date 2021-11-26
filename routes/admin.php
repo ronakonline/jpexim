@@ -38,4 +38,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('admin/add-blog',[BlogController::class,'store'])->name('admin.blogs.create');
 
+    Route::get('admin/all-blogs',[BlogController::class,'all'])->name('admin.blogs.all');
+
 });

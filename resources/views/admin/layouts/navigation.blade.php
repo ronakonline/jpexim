@@ -28,7 +28,7 @@
 
                 </ul>
             </li>
-            <li class="pcoded-hasmenu {{ Route::is('admin.products.add')||Route::is('admin.products.all') ? 'active pcoded-trigger' : ' ' }} ">
+            <li class="pcoded-hasmenu {{ Route::is('admin.blogs.add')||Route::is('admin.blogs.all') ? 'active pcoded-trigger' : ' ' }} ">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-book"></i></span>
                     <span class="pcoded-mtext">Blogs</span>
@@ -39,8 +39,8 @@
                             <span class="pcoded-mtext">Add Blog</span>
                         </a>
                     </li>
-                    <li class=" {{ Route::is('admin.products.all') ? 'active' : ' ' }}">
-                        <a href="{{ route('admin.products.all') }}">
+                    <li class=" {{ Route::is('admin.blogs.all') ? 'active' : ' ' }}">
+                        <a href="{{ route('admin.blogs.all') }}">
                             <span class="pcoded-mtext">All Blogs</span>
                         </a>
                     </li>
