@@ -73,4 +73,50 @@ class BlogController extends Controller
             return redirect()->route('admin.blogs.all')->with('success', 'Blog deleted successfully');
         }
     }
+
+    public function edit($id)
+    {
+        $id = Crypt::decrypt($id);
+        $blog = Blog::find($id);
+        if (!$blog) {
+            return redirect()->route('admin.blogs.all')->with('error', 'Blog not found');
+        } else {
+            return view('admin.blogs.edit_blog', compact('blog'));
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $id = Crypt::decrypt($id);
+        $blog = Blog::find($id);
+        if (!$blog) {
+            return redirect()->route('admin.blogs.all')->with('error', 'Blog not found');
+        } else {
+            $this->validate($request, [
+                'author' => 'required',
+                'title' => 'required|max:255|unique:blogs,title,'.$blog->id,
+                'description' => 'required',
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            ]);
+
+            if ($request->hasFile('image')) {
+                $oldimg = $this->img_path . '/' . $blog->image;
+                if (file_exists($oldimg)) {
+                    unlink($oldimg);
+                }
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move($this->img_path, $image_name);
+                $blog->image = $image_name;
+            }
+
+            $blog->slug = Str::slug($request->title, '-');
+            $blog->author = $request->author;
+            $blog->title = $request->title;
+            $blog->description = $request->description;
+            $blog->save();
+
+            return redirect()->route('admin.blogs.all')->with('success', 'Blog updated successfully');
+        }
+    }
 }

@@ -68,8 +68,8 @@
                                                             <a href="{{ route('blog.view', $blog->slug) }}"
                                                                 type="button" target="_blank" class="btn btn-primary m-1"><i
                                                                     class="feather icon-eye"></i>View</a>
-                                                            <button type="button" class="btn btn-secondary m-1"><i
-                                                                    class="feather icon-edit"></i>Edit</button>
+                                                            <a href="{{ route('admin.blogs.edit',Crypt::encrypt($blog->id)) }}" class="btn btn-secondary m-1"><i
+                                                                    class="feather icon-edit"></i>Edit</a>
 
                                                             <form method="post"  class="btn" action="{{ route('admin.blogs.destroy', Crypt::encrypt($blog->id)) }}">
                                                                 @csrf

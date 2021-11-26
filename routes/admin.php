@@ -42,4 +42,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('admin/delete-blog/{id}',[BlogController::class,'destroy'])->name('admin.blogs.destroy');
 
+    Route::get('admin/edit-blog/{id}',[BlogController::class,'edit'])->name('admin.blogs.edit');
+
+    Route::post('admin/edit-blog/{id}',[BlogController::class,'update'])->name('admin.blogs.update');
+
 });
