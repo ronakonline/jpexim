@@ -35,7 +35,7 @@
                                 <div class="shop-one__content text-center">
                                     <h3 class="shop-one__title"><a href="#">{{ $product->name }}</a>
                                     </h3>
-                                    <p class="shop-one__price">$23.00</p><!-- /.shop-one__price -->
+                                    <p class="shop-one__price">Rs {{$product->price}}</p><!-- /.shop-one__price -->
                                     <div class="shop-one__rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
