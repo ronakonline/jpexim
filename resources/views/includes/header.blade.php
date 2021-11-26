@@ -59,7 +59,7 @@
                                 <ul class="main-menu__list">
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/products">Products</a></li>
-                                    <li><a href="/">Blogs</a></li>
+                                    <li><a href="/blogs">Blogs</a></li>
                                     <li><a href="/">About</a></li>
                                     <li><a href="/">Contact</a></li>
                                 </ul>
