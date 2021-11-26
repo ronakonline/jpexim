@@ -6,6 +6,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -32,11 +33,11 @@ class BlogController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $image->move($this->img_path, $image_name);
-        }else{
+        } else {
             $image_name = 'no_image.png';
         }
 
@@ -55,5 +56,21 @@ class BlogController extends Controller
     {
         $blogs = Blog::orderBy('id', 'desc')->get();
         return view('admin.blogs.all_blogs', compact('blogs'));
+    }
+
+    public function destroy($id)
+    {
+        $id = Crypt::decrypt($id);
+        $blog = Blog::find($id);
+        if (!$blog) {
+            return redirect()->route('admin.blogs.all')->with('error', 'Blog not found');
+        } else {
+            $image = $this->img_path . '/' . $blog->image;
+            if (file_exists($image)) {
+                unlink($image);
+            }
+            $blog->delete();
+            return redirect()->route('admin.blogs.all')->with('success', 'Blog deleted successfully');
+        }
     }
 }

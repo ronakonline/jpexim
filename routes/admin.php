@@ -40,4 +40,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('admin/all-blogs',[BlogController::class,'all'])->name('admin.blogs.all');
 
+    Route::delete('admin/delete-blog/{id}',[BlogController::class,'destroy'])->name('admin.blogs.destroy');
+
 });

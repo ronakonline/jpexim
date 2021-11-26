@@ -65,13 +65,13 @@
                                                     <td>{{ $blog->created_at }}</td>
                                                     <td>
                                                         <div class="btn-group btn-group-sm">
-                                                            <a href="{{ route('admin.products.view', $blog->slug) }}"
-                                                                type="button" class="btn btn-primary m-1"><i
+                                                            <a href="{{ route('blog.view', $blog->slug) }}"
+                                                                type="button" target="_blank" class="btn btn-primary m-1"><i
                                                                     class="feather icon-eye"></i>View</a>
                                                             <button type="button" class="btn btn-secondary m-1"><i
                                                                     class="feather icon-edit"></i>Edit</button>
 
-                                                            <form method="post"  class="btn" action="{{ route('admin.products.destroy', $blog->id) }}">
+                                                            <form method="post"  class="btn" action="{{ route('admin.blogs.destroy', Crypt::encrypt($blog->id)) }}">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger p-0 px-2 py-1"><i class="feather icon-trash"></i>Delete</button>
