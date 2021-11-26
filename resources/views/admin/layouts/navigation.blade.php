@@ -28,6 +28,25 @@
 
                 </ul>
             </li>
+            <li class="pcoded-hasmenu {{ Route::is('admin.products.add')||Route::is('admin.products.all') ? 'active pcoded-trigger' : ' ' }} ">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                    <span class="pcoded-mtext">Blogs</span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" {{ Route::is('admin.blogs.add') ? 'active' : ' ' }}">
+                        <a href="{{ route('admin.blogs.add') }}">
+                            <span class="pcoded-mtext">Add Blog</span>
+                        </a>
+                    </li>
+                    <li class=" {{ Route::is('admin.products.all') ? 'active' : ' ' }}">
+                        <a href="{{ route('admin.products.all') }}">
+                            <span class="pcoded-mtext">All Blogs</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
             <!-- make link active on his route -->
 
             <div class="pcoded-navigatio-lavel">Site Settings</div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('admin/contact_setting',[SiteSettingController::class,'contact_setting_store'])->name('admin.contact_setting.store');
 
+    Route::get('admin/add-blog',[BlogController::class,'add'])->name('admin.blogs.add');
+
+    Route::post('admin/add-blog',[BlogController::class,'store'])->name('admin.blogs.create');
 
 });
