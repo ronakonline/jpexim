@@ -23,6 +23,8 @@ Route::get('products',[ProductController::class,'index'])->name('products');
 
 Route::get('blogs',[BlogController::class,'index'])->name('blogs');
 
+Route::get('blog/{slug}',[BlogController::class,'view'])->name('blog.view');
+
 
 require __DIR__.'/auth.php';
 

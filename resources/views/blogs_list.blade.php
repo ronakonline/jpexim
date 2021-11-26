@@ -4,7 +4,7 @@
         <div class="container">
             <div class="page-header__inner text-center clearfix">
                 <ul class="thm-breadcrumb">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Blogs</li>
                 </ul>
                 <h2>Latest Blogs</h2>
@@ -24,12 +24,12 @@
                     <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="blog-one__single">
                             <div class="blog-one__single-img">
-                                <img src="{{ asset('uploads/blogs/'.$blog->image); }}" alt="" />
+                                <img src="{{ asset('uploads/blogs/'.$blog->image); }}" alt="" width="auto" height="250px"/>
                                 <div class="date-box">
                                     <span>{{ $blog->created_at->format('j F, Y ') }}</span>
                                 </div>
                                 <div class="overlay-icon">
-                                    <a href="#"><span class="icon-plus"></span></a>
+                                    <a href="{{ route('blog.view',$blog->slug) }}"><span class="icon-plus"></span></a>
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
                                 <ul class="meta-info">
                                     <li><a href="#"><i class="far fa-user-circle"></i>{{ $blog->author }}</a></li>
                                 </ul>
-                                <h2><a href="#">{{ $blog->title }}</a></h2>
+                                <h2><a href="{{ route('blog.view',$blog->slug) }}">{{ $blog->title }}</a></h2>
                             </div>
                         </div>
                     </div>
