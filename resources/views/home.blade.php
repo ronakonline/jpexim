@@ -1,5 +1,4 @@
 <x-home-layout>
-
     <!--Main Slider Start-->
     <section class="main-slider main-slider-one main-slider-three">
         <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {
@@ -112,66 +111,39 @@
         </div><!-- /.container -->
     </section><!-- /.features-three -->
 
-    <section class="shop-one">
-        <div class="container">
-            <div class="sec-title text-center" style="margin-bottom: 4rem">
-                <div class="icon">
-                    <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}" alt="">
+    @if (!@empty($products))
+        <section class="shop-one">
+            <div class="container">
+                <div class="sec-title text-center" style="margin-bottom: 4rem">
+                    <div class="icon">
+                        <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}" alt="">
+                    </div>
+                    <span class="sec-title__tagline">Best for all of you</span>
+                    <h2 class="sec-title__title">Introduse Our Products</h2>
                 </div>
-                <span class="sec-title__tagline">Best for all of you</span>
-                <h2 class="sec-title__title">Introduse Our Products</h2>
-            </div>
 
-            <div class="row">
-                <div class="col-md-0 col-lg-2"></div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="shop-one__item">
-                        <div class="shop-one__image">
-                            <span class="shop-one__sale">sale</span><!-- /.shop-one__sale -->
-                            <img src="{{ asset('Frontend/assets/images/update-14-09-2021/shop/shop-1-1.png') }}"
-                                alt="">
-                            <a class="shop-one__cart" href="cart.html"><i class=" icon-shopping-cart"></i></a>
-                        </div><!-- /.shop-one__image -->
-                        <div class="shop-two__content text-center">
-                            <h3 class="shop-two__title"><a href="product-details.html">Brown Bread</a></h3>
-                            <p class="shop-two__price">$23.00</p><!-- /.shop-one__price -->
-                            <div class="shop-one__rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div><!-- /.shop-one__rating -->
-                        </div><!-- /.shop-one__content -->
-                    </div><!-- /.shop-one__item -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-0 col-lg-2"></div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="shop-one__item">
-                        <div class="shop-one__image">
-
-                            <img src="{{ asset('Frontend/assets/images/update-14-09-2021/shop/shop-1-2.png') }}"
-                                alt="">
-                            <a class="shop-one__cart" href="cart.html"><i class=" icon-shopping-cart"></i></a>
-                        </div><!-- /.shop-one__image -->
-                        <div class="shop-two__content text-center">
-                            <h3 class="shop-two__title"><a href="product-details.html">Red Onion</a></h3>
-                            <p class="shop-two__price">$33.00</p><!-- /.shop-one__price -->
-                            <div class="shop-one__rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div><!-- /.shop-one__rating -->
-                        </div><!-- /.shop-one__content -->
-                    </div><!-- /.shop-one__item -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-0 col-lg-2"></div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.shop-one -->
-
+                <div class="row">
+                    <div class="col-md-0 col-lg-2"></div>
+                    @foreach ($products as $product)
+                        <div class="col-md-6 col-lg-3">
+                            <div class="shop-one__item">
+                                <div class="shop-one__image">
+                                    <img src="{{ asset('uploads/' . $product->images[0]->image) }}" alt=""
+                                        height="300px" width="auto">
+                                </div><!-- /.shop-one__image -->
+                                <div class="shop-two__content text-center">
+                                    <h3 class="shop-two__title"><a
+                                            href="product-details.html">{{ $product->name }}</a></h3>
+                                    <p class="shop-two__price">Rs {{ $product->price }}</p><!-- /.shop-one__price -->
+                                </div><!-- /.shop-one__content -->
+                            </div><!-- /.shop-one__item -->
+                        </div><!-- /.col-md-6 col-lg-3 -->
+                        <div class="col-md-0 col-lg-2"></div>
+                    @endforeach
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.shop-one -->
+    @endempty
     <!--Company Logos One Start-->
     <section class="company-logos-one">
         <div class="container">
@@ -208,6 +180,7 @@
     <!--Company Logos One End-->
 
 
+    @if(!@empty($blogs))
     <!--Blog One Start-->
     <section class="blog-one" style="padding-top:20px !important">
         <div class="container">
@@ -219,84 +192,40 @@
                 <h2 class="sec-title__title">News & Articles</h2>
             </div>
             <div class="row">
-                <!--Start Single Blog One-->
-                <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__single-img">
-                            <img src="{{ asset('Frontend/assets/images/blog/blog-s-1-1.jpg') }}" alt="" />
-                            <div class="date-box">
-                                <span>30 July, 2021</span>
+                @foreach ($blogs as $blog)
+                    <!--Start Single Blog One-->
+                    <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__single-img">
+                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="" width="auto"
+                                    height="250px" />
+                                <div class="date-box">
+                                    <span>{{ $blog->created_at->format('j F, Y ') }}</span>
+                                </div>
+                                <div class="overlay-icon">
+                                    <a href="{{ route('blog.view', $blog->slug) }}"><span
+                                            class="icon-plus"></span></a>
+                                </div>
                             </div>
-                            <div class="overlay-icon">
-                                <a href="news-details.html"><span class="icon-plus"></span></a>
-                            </div>
-                        </div>
 
-                        <div class="blog-one__single-content">
-                            <ul class="meta-info">
-                                <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                                <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                            </ul>
-                            <h2><a href="news-details.html">Why Eco and Walking or Agriculture for the
-                                    Environment?</a></h2>
+                            <div class="blog-one__single-content">
+                                <ul class="meta-info">
+                                    <li><a href="#"><i class="far fa-user-circle"></i>{{ $blog->author }}</a>
+                                    </li>
+                                </ul>
+                                <h2><a href="{{ route('blog.view', $blog->slug) }}">{{ $blog->title }}</a>
+                                </h2>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--End Single Blog One-->
+                    <!--End Single Blog One-->
 
-                <!--Start Single Blog One-->
-                <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__single-img">
-                            <img src="{{ asset('Frontend/assets/images/blog/blog-s-1-2.jpg') }}" alt="" />
-                            <div class="date-box">
-                                <span>30 July, 2021</span>
-                            </div>
-                            <div class="overlay-icon">
-                                <a href="news-details.html"><span class="icon-plus"></span></a>
-                            </div>
-                        </div>
-
-                        <div class="blog-one__single-content">
-                            <ul class="meta-info">
-                                <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                                <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                            </ul>
-                            <h2><a href="news-details.html">Bring to the table win-win survival strategies to
-                                    ensure</a></h2>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Blog One-->
-
-                <!--Start Single Blog One-->
-                <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__single-img">
-                            <img src="{{ asset('Frontend/assets/images/blog/blog-s-1-3.jpg') }}" alt="" />
-                            <div class="date-box">
-                                <span>30 July, 2021</span>
-                            </div>
-                            <div class="overlay-icon">
-                                <a href="news-details.html"><span class="icon-plus"></span></a>
-                            </div>
-                        </div>
-
-                        <div class="blog-one__single-content">
-                            <ul class="meta-info">
-                                <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                                <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                            </ul>
-                            <h2><a href="news-details.html">Leverage agile frameworks to provide a robust
-                                    synopsis</a></h2>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Blog One-->
+                @endforeach
             </div>
         </div>
     </section>
     <!--Blog One End-->
+    @endempty
 
     <!--Start Contact Page-->
     <section class="contact-page" style="padding-top:20px !important">
