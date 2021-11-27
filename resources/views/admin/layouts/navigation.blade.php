@@ -62,6 +62,18 @@
                     <span class="pcoded-mtext">Contact Info</span>
                 </a>
             </li>
+            <li class="{{ Route::is('admin.about') ? 'active' : ' ' }}">
+                <a href="{{ route('admin.about') }}">
+                    <span class="pcoded-micon"><i class="feather icon-layout"></i></span>
+                    <span class="pcoded-mtext">About Page</span>
+                </a>
+            </li>
+            <li class="{{ Route::is('admin.contact_setting') ? 'active' : ' ' }}">
+                <a href="{{ route('admin.contact_setting') }}">
+                    <span class="pcoded-micon"><i class="feather icon-mail"></i></span>
+                    <span class="pcoded-mtext">Contact Messages</span>
+                </a>
+            </li>
         </ul>
 
     </div>

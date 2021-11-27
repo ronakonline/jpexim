@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\BlogController;
@@ -45,5 +46,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/edit-blog/{id}',[BlogController::class,'edit'])->name('admin.blogs.edit');
 
     Route::post('admin/edit-blog/{id}',[BlogController::class,'update'])->name('admin.blogs.update');
+
+    Route::get('admin/about',[AboutController::class,'index'])->name('admin.about');
+
+    Route::post('admin/update',[AboutController::class,'update'])->name('admin.about.update');
 
 });
