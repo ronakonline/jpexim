@@ -52,7 +52,7 @@
                                     <div class="form-group row">
                                         <div class="col-sm-12">
                                             <label class="col-form-label">Description</label>
-                                            @if(!empty($about->description)){
+                                            @if(!empty($about->description))
                                             <textarea class="form-control" id="summernote" name="description" placeholder="Enter description">{{ $about->description }}</textarea>
 
                                             @else

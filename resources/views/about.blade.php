@@ -32,19 +32,10 @@
                                     Yet, we are many.</h2>
                             </div>
                             <div class="about-three__content-box-inner">
-                                <p>JPexim is a professionally managed firm into global supply of high quality cotton
-                                    bales
-                                    and yarns. JPexim itself manufacturer of Cotton bales & tied up with number of
-                                    ginners
-                                    and spinners across Gujarat state specifically western Gujrat to manufacturer Cotton
-                                    bales of international standard. All the tied up associates are approved by textile
-                                    mission for Cotton and own high tech equipment managed by qualified and experienced
-                                    professionals. All associates are well-equipped with technically advanced and latest
-                                    machinery and have streamlined production process. JPexim always believe in quality
-                                    and
-                                    performance. Quality of final product is determined with quality of raw material.
+                                @if(!empty($about))
+                                <p>{{ $about->description }}
                                 </p>
-
+                                @endif
 
                             </div>
                             <div class="about-three__content-box-btn">
