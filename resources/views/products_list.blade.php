@@ -30,19 +30,14 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="shop-one__item">
                                 <div class="shop-one__image">
+                                    <a href="{{ route('product.view',$product->slug) }}">
                                     <img src="{{ asset('uploads/'.$product->images[0]->image); }}" alt="" width="auto" height="250px">
+                                    </a>
                                 </div><!-- /.shop-one__image -->
                                 <div class="shop-one__content text-center">
                                     <h3 class="shop-one__title"><a href="{{ route('product.view',$product->slug) }}">{{ $product->name }}</a>
                                     </h3>
                                     <p class="shop-one__price">Rs {{$product->price}}</p><!-- /.shop-one__price -->
-                                    <div class="shop-one__rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div><!-- /.shop-one__rating -->
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
                         </div>

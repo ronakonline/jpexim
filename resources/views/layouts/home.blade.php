@@ -96,6 +96,8 @@
             slidesToScroll: 1,
             arrows: false,
             fade: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             asNavFor: '.product-nav'
         });
         $('.product-nav').slick({
@@ -104,6 +106,7 @@
             asNavFor: '.product-slider',
             centerMode: true,
             focusOnSelect: true
+
         });
     </script>
 </body>

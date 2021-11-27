@@ -98,7 +98,32 @@
                 <h2 class="sec-title__title">Meet our clients</h2>
             </div>
             <div class="thm-swiper__slider swiper-container"
-                data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }}'>
+            data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                "0": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 1
+                },
+                "375": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 1
+                },
+                "575": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 3
+                },
+                "767": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 4
+                },
+                "991": {
+                    "spaceBetween": 40,
+                    "slidesPerView": 5
+                },
+                "1199": {
+                    "spaceBetween": 40,
+                    "slidesPerView": 5
+                }
+            }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt="">

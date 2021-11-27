@@ -34,6 +34,7 @@
                             <!--End Footer Widget Column-->
                             <div class="col-xl-1 col-lg-1"></div>
                             <!--Start Footer Widget Column-->
+                            @if(!@empty($footer_blogs))
                             <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s">
                                 <div class="footer-widget__column footer-widget__news">
                                     <h2 class="footer-widget__title">News</h2>
@@ -54,6 +55,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            @endempty
                             <!--End Footer Widget Column-->
 
                             <div class="col-xl-1"></div>

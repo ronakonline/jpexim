@@ -1,4 +1,5 @@
 <x-home-layout>
+
     <!--Main Slider Start-->
     <section class="main-slider main-slider-one main-slider-three">
         <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {
@@ -15,11 +16,11 @@
             }}'>
 
             <div class="swiper-wrapper">
-                @foreach ($sliders as $slider) )
+                @foreach ($sliders as $slide)
                     <!--Start Single Swiper Slide-->
                     <div class="swiper-slide">
                         <div class="image-layer"
-                            style="background-image: url({{ asset('uploads/home_slider/' . $slider->image) }});">
+                            style="background-image: url({{ asset('uploads/home_slider/' . $slide->image) }});">
                         </div>
                         <div class="container">
                             <div class="row">
@@ -42,6 +43,7 @@
                     </div>
                     <!--End Single Swiper Slide-->
                 @endforeach
+
             </div>
 
             <!-- If we need navigation buttons -->
@@ -129,11 +131,11 @@
                             <div class="shop-one__item">
                                 <div class="shop-one__image">
                                     <img src="{{ asset('uploads/' . $product->images[0]->image) }}" alt=""
-                                     height="300px" width="auto" >
+                                        height="300px" width="auto">
                                 </div><!-- /.shop-one__image -->
                                 <div class="shop-two__content text-center">
                                     <h3 class="shop-two__title"><a
-                                            href="product-details.html">{{ $product->name }}</a></h3>
+                                            href="{{ route('product.view',$product->slug) }}">{{ $product->name }}</a></h3>
                                     <p class="shop-two__price">Rs {{ $product->price }}</p><!-- /.shop-one__price -->
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
@@ -144,6 +146,7 @@
             </div><!-- /.container -->
         </section><!-- /.shop-one -->
     @endempty
+
     <!--Company Logos One Start-->
     <section class="company-logos-one">
         <div class="container">
@@ -154,8 +157,32 @@
                 <span class="sec-title__tagline">Clients</span>
                 <h2 class="sec-title__title">Meet our clients</h2>
             </div>
-            <div class="thm-swiper__slider swiper-container"
-                data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }}'>
+            <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                "0": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 1
+                },
+                "375": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 1
+                },
+                "575": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 3
+                },
+                "767": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 4
+                },
+                "991": {
+                    "spaceBetween": 40,
+                    "slidesPerView": 5
+                },
+                "1199": {
+                    "spaceBetween": 40,
+                    "slidesPerView": 5
+                }
+            }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt="">
@@ -179,52 +206,52 @@
     </section>
     <!--Company Logos One End-->
 
-
-    @if(!@empty($blogs))
-    <!--Blog One Start-->
-    <section class="blog-one" style="padding-top:20px !important">
-        <div class="container">
-            <div class="sec-title text-center">
-                <div class="icon">
-                    <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}" alt="">
+    @if (!@empty($blogs))
+        <!--Blog One Start-->
+        <section class="blog-one" style="padding-top:20px !important">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <div class="icon">
+                        <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}" alt="">
+                    </div>
+                    <span class="sec-title__tagline">from the blog</span>
+                    <h2 class="sec-title__title">News & Articles</h2>
                 </div>
-                <span class="sec-title__tagline">from the blog</span>
-                <h2 class="sec-title__title">News & Articles</h2>
-            </div>
-            <div class="row">
-                @foreach ($blogs as $blog)
-                    <!--Start Single Blog One-->
-                    <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="blog-one__single">
-                            <div class="blog-one__single-img">
-                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="" width="auto"
-                                    height="250px" />
-                                <div class="date-box">
-                                    <span>{{ $blog->created_at->format('j F, Y ') }}</span>
+                <div class="row">
+                    @foreach ($blogs as $blog)
+                        <!--Start Single Blog One-->
+                        <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms"
+                            data-wow-duration="1500ms">
+                            <div class="blog-one__single">
+                                <div class="blog-one__single-img">
+                                    <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="" width="auto"
+                                        height="250px" />
+                                    <div class="date-box">
+                                        <span>{{ $blog->created_at->format('j F, Y ') }}</span>
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <a href="{{ route('blog.view', $blog->slug) }}"><span
+                                                class="icon-plus"></span></a>
+                                    </div>
                                 </div>
-                                <div class="overlay-icon">
-                                    <a href="{{ route('blog.view', $blog->slug) }}"><span
-                                            class="icon-plus"></span></a>
-                                </div>
-                            </div>
 
-                            <div class="blog-one__single-content">
-                                <ul class="meta-info">
-                                    <li><a href="#"><i class="far fa-user-circle"></i>{{ $blog->author }}</a>
-                                    </li>
-                                </ul>
-                                <h2><a href="{{ route('blog.view', $blog->slug) }}">{{ $blog->title }}</a>
-                                </h2>
+                                <div class="blog-one__single-content">
+                                    <ul class="meta-info">
+                                        <li><a href="#"><i class="far fa-user-circle"></i>{{ $blog->author }}</a>
+                                        </li>
+                                    </ul>
+                                    <h2><a href="{{ route('blog.view', $blog->slug) }}">{{ $blog->title }}</a>
+                                    </h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--End Single Blog One-->
+                        <!--End Single Blog One-->
 
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
-    <!--Blog One End-->
+        </section>
+        <!--Blog One End-->
     @endempty
 
     <!--Start Contact Page-->
@@ -272,7 +299,8 @@
                                     <div class="comment-form__input-box">
                                         <textarea name="message" placeholder="Write message"></textarea>
                                     </div>
-                                    <button type="submit" class="thm-btn comment-form__btn">Send a message</button>
+                                    <button type="submit" class="thm-btn comment-form__btn">Send a
+                                        message</button>
                                 </div>
                             </div>
                         </form>

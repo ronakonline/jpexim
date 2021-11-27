@@ -9,11 +9,9 @@
                     </div>
                     <div class="social-link clearfix">
                         <ul>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             @if(!empty($settings->facebook_url))
                             <li><a href="{{ $settings->facebook_url }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
                             @endif
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             @if(!empty($settings->instagram_url))
                             <li><a href="{{ $settings->instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             @endif

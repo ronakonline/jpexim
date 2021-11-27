@@ -62,21 +62,24 @@
 
                         <div class="news-details__pagenation">
                             <div class="row">
+                                @if(!empty($blogprev))
                                 <!--Start Single News Details Pagenation-->
                                 <div class="col-xl-6">
                                     <div class="news-details__pagenation-single style2">
-                                        <h2><a href="#">The Winter Wheat Harvest Gathering Momentum</a></h2>
+                                        <h2><a href="{{ route('blog.view',$blogprev->slug) }}">{{ $blogprev->title; }}</a></h2>
                                     </div>
                                 </div>
                                 <!--End Single News Details Pagenation-->
-
+                                @endif
+                                @if(!empty($blognext))
                                 <!--Start Single News Details Pagenation-->
                                 <div class="col-xl-6">
                                     <div class="news-details__pagenation-single active">
-                                        <h2><a href="#">The Winter Wheat Harvest Gathering Momentum</a></h2>
+                                        <h2><a href="{{ route('blog.view',$blognext->slug) }}">{{ $blognext->title; }}</a></h2>
                                     </div>
                                 </div>
                                 <!--End Single News Details Pagenation-->
+                                @endif
                             </div>
                         </div>
                     </div>
