@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -26,6 +27,8 @@ Route::get('product/{slug}',[ProductController::class,'view'])->name('product.vi
 Route::get('blogs',[BlogController::class,'index'])->name('blogs');
 
 Route::get('blog/{slug}',[BlogController::class,'view'])->name('blog.view');
+
+Route::get('about',[AboutController::class,'index'])->name('about');
 
 
 require __DIR__.'/auth.php';
