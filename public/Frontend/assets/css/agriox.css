@@ -5291,8 +5291,8 @@ button {
   .features-three__list li {
     padding-left: 95px;
     padding-right: 30px;
-    padding-top: 40px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
   }
   .features-three__list li:hover {
@@ -5359,8 +5359,8 @@ button {
 }
 
 .features-three__list li p {
-  font-size: 18px;
-  line-height: 34px;
+  font-size: 16px;
+  line-height: 25px;
   color: #687469;
   font-weight: 400;
   margin: 0;
