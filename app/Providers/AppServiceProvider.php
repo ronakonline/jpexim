@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Blog;
 use App\Models\SiteSetting;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
             $settings = SiteSetting::first();
-            view()->share('settings', $settings);
+            $footer_blogs = Blog::offset(0)->limit(2)->get();
+            view()->share(['settings' => $settings, 'footer_blogs' => $footer_blogs]);
     }
 }

@@ -129,7 +129,7 @@
                             <div class="shop-one__item">
                                 <div class="shop-one__image">
                                     <img src="{{ asset('uploads/' . $product->images[0]->image) }}" alt=""
-                                        height="300px" width="auto">
+                                     height="300px" width="auto" >
                                 </div><!-- /.shop-one__image -->
                                 <div class="shop-two__content text-center">
                                     <h3 class="shop-two__title"><a
