@@ -9,7 +9,7 @@
                                 alt="" /></div>
                         <div class="row">
                             <!--Start Footer Widget Column-->
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
                                 <div class="footer-widget__column footer-widget__about">
                                     <div class="footer-widget__about-logo">
                                         <a href="index.html"><img src="{{ asset('Frontend/assets/images/resources/footer-logo.png'); }}"
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <!--End Footer Widget Column-->
-
+                            <div class="col-xl-1 col-lg-1"></div>
                             <!--Start Footer Widget Column-->
                             <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s">
                                 <div class="footer-widget__column footer-widget__news">
@@ -60,8 +60,9 @@
                             </div>
                             <!--End Footer Widget Column-->
 
+                            <div class="col-xl-1"></div>
                             <!--Start Footer Widget Column-->
-                            <div class="col-xl-2 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
                                 <div class="footer-widget__column footer-widget__explore">
                                     <h2 class="footer-widget__title">Explore</h2>
                                     <ul class="footer-widget__explore-list">
@@ -80,19 +81,7 @@
                             </div>
                             <!--End Footer Widget Column-->
 
-                            <!--Start Footer Widget Column-->
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.7s">
-                                <div class="footer-widget__column footer-widget__newletter">
-                                    <h2 class="footer-widget__title">Newletter</h2>
-                                    <p class="footer-widget__newletter-text">Sign up now to get daily latest
-                                        news & updates from us</p>
-                                    <form class="subscribe-form" action="#">
-                                        <input type="email" name="email" placeholder="Email address">
-                                        <button type="submit">Go</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!--End Footer Widget Column-->
+
                         </div>
                     </div>
                 </div>
