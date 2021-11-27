@@ -21,6 +21,8 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('products',[ProductController::class,'index'])->name('products');
 
+Route::get('product/{slug}',[ProductController::class,'view'])->name('product.view');
+
 Route::get('blogs',[BlogController::class,'index'])->name('blogs');
 
 Route::get('blog/{slug}',[BlogController::class,'view'])->name('blog.view');

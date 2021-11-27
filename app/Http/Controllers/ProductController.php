@@ -12,4 +12,13 @@ class ProductController extends Controller
         $products = Product::all();
         return view('products_list')->with('products', $products);
     }
+
+    public function view($slug){
+        $product = Product::where('slug', $slug)->first();
+        if(!$product){
+            abort(404);
+        }else{
+            return view('product')->with('product', $product);
+        }
+    }
 }

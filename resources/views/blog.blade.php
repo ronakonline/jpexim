@@ -25,7 +25,7 @@
                         <!--Start Single Blog One-->
                         <div class="blog-one__single">
                             <div class="blog-one__single-img">
-                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="" width="auto" height="400px"/>
+                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="" width="auto" height="auto"/>
                             </div>
 
                             <div class="blog-one__single-content blog-details">
