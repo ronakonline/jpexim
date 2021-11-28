@@ -69,10 +69,10 @@
                                                             <a href="{{ route('admin.products.view', $product->slug) }}"
                                                                 type="button" class="btn btn-primary m-1"><i
                                                                     class="feather icon-eye"></i>View</a>
-                                                            <button type="button" class="btn btn-secondary m-1"><i
-                                                                    class="feather icon-edit"></i>Edit</button>
+                                                            <a href="{{ route('admin.products.edit', Crypt::encrypt($product->id)) }}" type="button" class="btn btn-secondary m-1"><i
+                                                                    class="feather icon-edit"></i>Edit</a>
 
-                                                            <form method="post"  class="btn" action="{{ route('admin.products.destroy', $product->id) }}">
+                                                            <form method="post"  class="btn" action="{{ route('admin.products.destroy', Crypt::encrypt($product->id)) }}">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger p-0 px-2 py-1"><i class="feather icon-trash"></i>Delete</button>

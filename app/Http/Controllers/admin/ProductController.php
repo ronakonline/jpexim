@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -27,7 +28,7 @@ class ProductController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'price' => 'required||integer',
+            'price' => 'required||numeric',
             'images' =>  'bail|required',
             'images.*' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ],[
@@ -73,6 +74,7 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
+        $id = Crypt::decrypt($id);
         $product = Product::find($id);
         if(!$product){
             abort(404);
@@ -85,6 +87,39 @@ class ProductController extends Controller
 
         $product->delete();
         return back()->with('success', 'Product deleted successful');
+        }
+    }
+
+    public function edit($id)
+    {
+        $id = Crypt::decrypt($id);
+        $product = Product::find($id);
+        if(!$product){
+            abort(404);
+        }else{
+            return view('admin.products.edit_product', compact('product'));
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $id = Crypt::decrypt($id);
+        $product = Product::find($id);
+        if(!$product){
+            abort(404);
+        }else{
+            $this->validate($request, [
+                'title' => 'required',
+                'description' => 'required',
+                'price' => 'required||numeric',
+            ]);
+
+            $product->name = $request->title;
+            $product->description = $request->description;
+            $product->price = $request->price;
+            $product->save();
+
+            return back()->with('success', 'Product updated successful');
         }
     }
 }
