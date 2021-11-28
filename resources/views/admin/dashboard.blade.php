@@ -15,7 +15,7 @@
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <p class="m-b-5">Products</p>
-                                        <h4 class="m-b-0">2</h4>
+                                        <h4 class="m-b-0">{{ $productscount }}</h4>
                                     </div>
                                     <div class="col col-auto text-right">
                                         <i class="feather icon-shopping-cart f-50 text-c-yellow"></i>
@@ -30,7 +30,7 @@
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <p class="m-b-5">Blogs</p>
-                                        <h4 class="m-b-0">3</h4>
+                                        <h4 class="m-b-0">{{ $blogscount }}</h4>
                                     </div>
                                     <div class="col col-auto text-right">
                                         <i class="feather icon-book f-50 text-c-green"></i>
@@ -45,7 +45,7 @@
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <p class="m-b-5">Visitors</p>
-                                        <h4 class="m-b-0">42</h4>
+                                        <h4 class="m-b-0">{{ $visitors }}</h4>
                                     </div>
                                     <div class="col col-auto text-right">
                                         <i class="feather icon-eye f-50 text-c-pink"></i>
@@ -77,9 +77,6 @@
                             <div class="card-header">
                                 <div class="card-header-left ">
                                     <h5>Monthly View</h5>
-                                    <span class="text-muted">For more details about usage, please refer <a
-                                            href="https://www.amcharts.com/online-store/" target="_blank">amCharts</a>
-                                        licences.</span>
                                 </div>
                             </div>
                             <div class="card-block-big">
@@ -95,16 +92,12 @@
     </div>
 
     @push('js')
+
         <script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
-        <!-- Chart js -->
-        <script type="text/javascript" src="{{ asset('bower_components/chart.js/js/Chart.js') }}"></script>
 
         <!-- gauge js -->
-        <script src="{{ asset('pages/widget/gauge/gauge.min.js') }}"></script>
         <script src="{{ asset('pages/widget/amchart/amcharts.js') }}"></script>
         <script src="{{ asset('pages/widget/amchart/serial.js') }}"></script>
-        <script src="{{ asset('pages/widget/amchart/gauge.js') }}"></script>
-        <script src="{{ asset('pages/widget/amchart/pie.js') }}"></script>
-        <script src="{{ asset('pages/widget/amchart/light.js') }}"></script>
+
     @endpush
 </x-app-layout>

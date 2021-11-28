@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('admin/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('admin/homeslider', [HomesliderController::class, 'create'])->name('admin.homeslider');
 
