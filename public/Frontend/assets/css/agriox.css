@@ -20,12 +20,12 @@
   --agriox-font: 'DM Sans', sans-serif;
   --agriox-font-2: 'Averia Sans Libre', cursive;
   --agriox-font-3: 'Shadows Into Light', cursive;
-  --agriox-base: #f1cf69;
-  --agriox-base-rgb: 241, 207, 105;
-  --agriox-primary: #334b35;
-  --agriox-primary-rgb: 51, 75, 53;
-  --agriox-secondary: #6d8c54;
-  --agriox-secondary-rgb: 109, 140, 84;
+  --agriox-base: #F3A953;
+  --agriox-base-rgb: 243, 169, 83;
+  --agriox-primary: #366ED8;
+  --agriox-primary-rgb: 54, 110, 216;
+  --agriox-secondary: #064ACB;
+  --agriox-secondary-rgb: 6, 74, 203;
   --agriox-color-1: #687469;
   --agriox-color-1-rgb: 104, 116, 105;
 }
@@ -1472,7 +1472,7 @@ button {
 .main-header--one__top {
   position: relative;
   display: block;
-  background: #f6f4ec;
+  background: #064ACB;
 }
 
 .main-header--one__top .auto-container {
@@ -1506,7 +1506,7 @@ button {
 }
 
 .main-header--one__top-left .text p {
-  color: #6e7673;
+  color: white;
   font-size: 12px;
   line-height: 22px;
   font-weight: 500;
@@ -1515,7 +1515,7 @@ button {
 .main-header--one__top-left .social-link {
   position: relative;
   display: block;
-  background: #eceae0;
+  background: #064ACB;
   padding: 5px 40px 4px;
   margin-left: 40px;
 }
@@ -1539,7 +1539,7 @@ button {
 .main-header--one__top-left .social-link ul li a {
   position: relative;
   display: inline-block;
-  color: #6e7673;
+  color: white;
   font-size: 15px;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -1607,7 +1607,7 @@ button {
 }
 
 .main-header--one__top-right ul li .text p a {
-  color: #6e7673;
+  color: white;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
   -webkit-transition-delay: 0.1s;
@@ -4530,7 +4530,7 @@ button {
 .footer-widget__about-text {
   position: relative;
   display: block;
-  color: #b3c5b5;
+  color: white;
   font-size: 16px;
   padding-bottom: 28px;
 }
@@ -4538,7 +4538,7 @@ button {
 .footer-widget__about-contact-box {
   position: relative;
   display: block;
-  border-top: 1px solid #465c48;
+  border-top: 1px solid white;
   padding-top: 29px;
 }
 
@@ -4708,7 +4708,7 @@ button {
 .footer-widget__explore-list-item a {
   position: relative;
   display: inline-block;
-  color: #b3c5b5;
+  color: white;
   font-size: 16px;
   line-height: 23px;
   font-weight: 400;

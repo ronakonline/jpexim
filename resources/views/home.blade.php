@@ -125,11 +125,11 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-0 col-lg-2"></div>
+                    <div class="col-1"></div>
                     @foreach ($products as $product)
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-4">
                             <div class="shop-one__item">
-                                <div class="shop-one__image">
+                                <div class="shop-one__image" style="height: 270px; width:auto; background-size:cover">
                                     <img src="{{ asset('uploads/' . $product->images[0]->image) }}" alt=""
                                         height="300px" width="auto">
                                 </div><!-- /.shop-one__image -->
@@ -140,7 +140,7 @@
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
                         </div><!-- /.col-md-6 col-lg-3 -->
-                        <div class="col-md-0 col-lg-2"></div>
+                        <div class="col-2"></div>
                     @endforeach
                 </div><!-- /.row -->
             </div><!-- /.container -->
