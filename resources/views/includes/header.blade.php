@@ -39,7 +39,7 @@
                 <div class="main-header--one__bottom-inner">
                     <div class="main-header--one__bottom-left">
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('Frontend/assets/images/resources/logo-1.png'); }}" alt="" /></a>
+                            <a href="/"><img src="{{ asset('Frontend/assets/images/logo/JP Exim B3.jpg'); }}" alt=""  height="80px"/></a>
                         </div>
                     </div>
                     <nav class="main-menu main-menu--1">
@@ -48,8 +48,7 @@
 
                             <div class="stricky-one-logo">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('Frontend/assets/images/resources/logo-1.png'); }}"
-                                            alt=""></a>
+                                    <a href="/"><img src="{{ asset('Frontend/assets/images/logo/JP Exim B3.jpg'); }}" alt=""  height="80px"/></a>
                                 </div>
                             </div>
 
