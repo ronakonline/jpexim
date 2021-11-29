@@ -39,6 +39,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('Frontend/assets/css/agriox.css') }}" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
     @if (session('success'))
     <script>
         alert('{{ session('success') }}');
@@ -51,6 +52,14 @@
     <div class="preloader">
         <img class="preloader__image" width="60" src="{{ asset('Frontend/assets/images/loader.png') }}" alt="" />
     </div>
+    <div id="google_translate_element" hidden></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+       }
+     </script>
+
+     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
 
     <!-- /.preloader -->
     <div class="page-wrapper">
@@ -90,7 +99,6 @@
     <script src="{{ asset('Frontend/assets/vendors/tilt.js/tilt.jquery.js') }}"></script>
 
 
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
 
     <!-- template js -->
     <script src="{{ asset('Frontend/assets/js/agriox.js') }}"></script>
