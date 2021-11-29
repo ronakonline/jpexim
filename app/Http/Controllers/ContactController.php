@@ -33,6 +33,6 @@ class ContactController extends Controller
 
     public function list(){
         $contacts = \App\Models\Eqnuiries::all();
-        return view('contactlist')->with('contacts', $contacts);
+        return view('admin.contactlist')->with('contacts', $contacts);
     }
 }

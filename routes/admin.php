@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\HomesliderController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,5 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/about',[AboutController::class,'index'])->name('admin.about');
 
     Route::post('admin/update',[AboutController::class,'update'])->name('admin.about.update');
+
+    Route::get('admin/contact-messages',[ContactController::class,'list'])->name('admin.contact.list');
 
 });
