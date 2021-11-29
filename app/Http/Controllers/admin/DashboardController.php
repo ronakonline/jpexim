@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Eqnuiries;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Sarfraznawaz2005\VisitLog\Facades\VisitLog;
@@ -27,6 +28,7 @@ class DashboardController extends Controller
         $data['visitors'] = VisitLog::all()->count();
         $data['productscount'] = Product::all()->count();
         $data['blogscount'] = Blog::all()->count();
+        $data['enquiriescount'] = Eqnuiries::all()->count();
         return view('admin.dashboard')->with($data);
     }
 }

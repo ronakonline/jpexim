@@ -60,7 +60,7 @@
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <p class="m-b-5">Enquiries</p>
-                                        <h4 class="m-b-0">5</h4>
+                                        <h4 class="m-b-0">{{ $enquiriescount }}</h4>
                                     </div>
                                     <div class="col col-auto text-right">
                                         <i class="feather icon-mail f-50 text-c-blue"></i>
