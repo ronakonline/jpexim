@@ -40,10 +40,32 @@
     <link rel="stylesheet" href="{{ asset('Frontend/assets/css/agriox.css') }}" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
+    <style type="text/css">
+        #google_translate_element select {
+            background: #f6edfd;
+            color: #383ffa;
+            border: none;
+            border-radius: 3px;
+            padding: 6px 8px
+        }
+
+        /*google translate link | logo */
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+
+
+
+    </style>
+
     @if (session('success'))
-    <script>
-        alert('{{ session('success') }}');
-    </script>
+        <script>
+            alert('{{ session('success') }}');
+        </script>
     @endif
 </head>
 
@@ -52,14 +74,6 @@
     <div class="preloader">
         <img class="preloader__image" width="60" src="{{ asset('Frontend/assets/images/loader.png') }}" alt="" />
     </div>
-    <div id="google_translate_element" hidden></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-       }
-     </script>
-
-     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
 
     <!-- /.preloader -->
     <div class="page-wrapper">
@@ -121,6 +135,19 @@
             focusOnSelect: true
 
         });
+    </script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: 'true',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
 </body>
 

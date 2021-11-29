@@ -7,7 +7,7 @@
                     <div class="text">
                         <p>Welcome to JP Exim</p>
                     </div>
-                    <div class="social-link clearfix">
+                    <div class="social-link clearfix" style="margin-left: 0px;">
                         <ul>
                             @if(!empty($settings->facebook_url))
                             <li><a href="{{ $settings->facebook_url }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
@@ -15,12 +15,15 @@
                             @if(!empty($settings->instagram_url))
                             <li><a href="{{ $settings->instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             @endif
+                            @if(!empty($settings->email))
+                            <li><a href="mailto:{{ $settings->email; }}" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
 
                 <div class="main-header--one__top-right clearfix">
-                    <ul>
+                    {{-- <ul>
                         <li>
                             <div class="icon">
                                 <i class="fa fa-envelope"></i>
@@ -29,7 +32,8 @@
                                 <p><a href="mailto:{{ $settings->email; }}">{{ $settings->email; }}</a></p>
                             </div>
                         </li>
-                    </ul>
+                    </ul> --}}
+                    <div id='google_translate_element'></div>
                 </div>
             </div>
         </div>
