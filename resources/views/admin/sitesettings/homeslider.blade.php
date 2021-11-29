@@ -54,6 +54,15 @@
                                     @csrf
                                     <div class="form-group">
                                         <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Slider Text</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="title" class="form-control">
+                                                @error('title')
+                                                    <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Upload Image</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="image" class="form-control">
@@ -97,6 +106,7 @@
                                                             <div class="media">
 
                                                                 <div class="media-body">
+                                                                    <h5 class="mb-0">{{ $image->title }}</h5>
                                                                     <div class="col-xs-12">
                                                                         <img src="{{ asset('uploads/home_slider/' . $image->image) }}"
                                                                             alt="{{ $image->image }}" width="100%"

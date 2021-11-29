@@ -29,6 +29,7 @@ class HomesliderController extends Controller
         $path = Storage::url('uploads/home_slider/'.$input['imagename']);
 
         $homeslider = new homeslider;
+        $homeslider->title = $request->title ? $request->title : null;
         $homeslider->image = $input['imagename'];
         $homeslider->path = $path;
         $homeslider->save();
