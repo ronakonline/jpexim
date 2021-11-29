@@ -91,6 +91,47 @@
                                 </form>
                             </div>
                         </div>
+                        <div class="card">
+
+                            <div class="card-block">
+                                <h5 class="sub-title">Edit product Images</h5>
+                                <form method="POST" action="{{ route('admin.products.updateimages',Crypt::encrypt($product->id)) }}" enctype="multipart/form-data">
+                                    @csrf
+
+                                    <div class="form-group row">
+
+                                        <div class="col-sm-12">
+                                            <label class="col-form-label">Product Image</label>
+                                            <input type="file" id="product-images" class="form-control" name="images[]" multiple>
+
+                                            @error('images.*')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row preview">
+                                        <div class="col-sm-12">
+                                            <label class="col-form-label">Product Images</label>
+                                            <div class="row">
+                                                @foreach ($product->images as $image)
+                                                    <div class="col-sm-3">
+                                                        <img src="{{ asset('uploads/'.$image->image) }}" class="img-fluid" alt="" height="200px" width="200px" data-img-name="{{ $image->image }}">
+                                                        <a href="" class="btn btn-danger rounded mt-2 delete-img" >Delete</a>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="delete_images" class="delete-images" hidden>
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -133,8 +174,15 @@
             };
 
             $('#product-images').on('change', function() {
-                imagesPreview(this, 'div.preview');
+                imagesPreview(this, '.preview');
             });
+        });
+
+        $(document).on('click', '.delete-img', function(e) {
+            e.preventDefault();
+            img = $(".delete-images");
+            img.val(img.val() + $(this).parent().find('img').data('img-name') + ',');
+            $(this).parent().remove();
         });
     </script>
     @endpush

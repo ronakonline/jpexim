@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-       $products = Product::all();
+        $products = Product::all();
         return view('admin.products.all_products', compact('products'));
     }
 
@@ -31,7 +31,7 @@ class ProductController extends Controller
             'price' => 'required||numeric',
             'images' =>  'bail|required',
             'images.*' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-        ],[
+        ], [
             'images.*.max' => 'Image size must be less than 4MB',
             'images.*.mimes' => 'Image type must be jpeg,png,jpg,gif,svg',
             'images.*.image' => 'Product Image must be an image',
@@ -50,7 +50,7 @@ class ProductController extends Controller
         if ($request->hasFile('images')) {
             $images = $request->file('images');
             foreach ($images as $image) {
-                $imageName = md5(rand(1000,10000)).'.'.$image->getClientOriginalExtension();
+                $imageName = md5(rand(1000, 10000)) . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('/uploads'), $imageName);
                 $product->images()->create(['image' => $imageName]);
             }
@@ -58,35 +58,34 @@ class ProductController extends Controller
 
 
         return back()->with('success', 'Product inserted successful');
-
     }
 
-    public function view($slug){
+    public function view($slug)
+    {
         $product = Product::where('slug', $slug)->first();
-        if(!$product){
+        if (!$product) {
             abort(404);
-        }else{
+        } else {
             $images = ProductImage::where('product_id', $product->id)->get();
             return view('admin.products.view_product', compact('product', 'images'));
         }
-
     }
 
     public function destroy($id)
     {
         $id = Crypt::decrypt($id);
         $product = Product::find($id);
-        if(!$product){
+        if (!$product) {
             abort(404);
-        }else{
+        } else {
 
-        $productimages = $product->images()->get();
-        foreach ($productimages as $image) {
-            unlink(public_path('/uploads/'.$image->image));
-        }
+            $productimages = $product->images()->get();
+            foreach ($productimages as $image) {
+                unlink(public_path('/uploads/' . $image->image));
+            }
 
-        $product->delete();
-        return back()->with('success', 'Product deleted successful');
+            $product->delete();
+            return back()->with('success', 'Product deleted successful');
         }
     }
 
@@ -94,9 +93,9 @@ class ProductController extends Controller
     {
         $id = Crypt::decrypt($id);
         $product = Product::find($id);
-        if(!$product){
+        if (!$product) {
             abort(404);
-        }else{
+        } else {
             return view('admin.products.edit_product', compact('product'));
         }
     }
@@ -105,9 +104,9 @@ class ProductController extends Controller
     {
         $id = Crypt::decrypt($id);
         $product = Product::find($id);
-        if(!$product){
+        if (!$product) {
             abort(404);
-        }else{
+        } else {
             $this->validate($request, [
                 'title' => 'required',
                 'description' => 'required',
@@ -119,6 +118,36 @@ class ProductController extends Controller
             $product->price = $request->price;
             $product->save();
 
+            return back()->with('success', 'Product updated successful');
+        }
+    }
+
+    public function updateimages(Request $request, $id)
+    {
+        $id = Crypt::decrypt($id);
+        $product = Product::find($id);
+        if (!$product) {
+            abort(404);
+        } else {
+            $images = explode(',', $request->delete_images);
+            foreach ($images as $image) {
+                $image = ProductImage::where('image', $image)->first();
+                if ($image) {
+                    if ($image->product_id == $id) {
+                        unlink(public_path('/uploads/'.$image->image));
+                        $image->delete();
+                    }
+                }
+            }
+            //insert new images
+            if ($request->hasFile('images')) {
+                $images = $request->file('images');
+                foreach ($images as $image) {
+                    $imageName = md5(rand(1000, 10000)) . '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path('/uploads'), $imageName);
+                    $product->images()->create(['image' => $imageName]);
+                }
+            }
             return back()->with('success', 'Product updated successful');
         }
     }

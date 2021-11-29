@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('admin/edit-product/{id}',[ProductController::class, 'update'])->name('admin.products.update');
 
+    Route::post('admin/edit-productimg/{id}',[ProductController::class, 'updateimages'])->name('admin.products.updateimages');
+
     Route::get('admin/view-product/{slug}',[ProductController::class,'view'])->name('admin.products.view');
 
     Route::delete('admin/delete-product/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
