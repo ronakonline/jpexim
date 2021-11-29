@@ -115,24 +115,24 @@
                     "slidesPerView": 5
                 }
             }}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/silvertech.png') }}" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/sintex-industry.png') }}" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/skyewin.png') }}" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/vardhman.png') }}" alt="">
-                    </div><!-- /.swiper-slide -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('Frontend/assets/images/clients/silvertech.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('Frontend/assets/images/clients/sintex-industry.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('Frontend/assets/images/clients/skyewin.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('Frontend/assets/images/clients/vardhman.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                </div><!-- /.swiper-slide -->
 
-                </div>
+            </div>
             </div>
         </div>
     </section>
