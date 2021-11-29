@@ -133,7 +133,8 @@
                                 </div><!-- /.shop-one__image -->
                                 <div class="shop-two__content text-center">
                                     <h3 class="shop-two__title"><a
-                                            href="{{ route('product.view',$product->slug) }}">{{ $product->name }}</a></h3>
+                                            href="{{ route('product.view', $product->slug) }}">{{ $product->name }}</a>
+                                    </h3>
                                     <p class="shop-two__price">Rs {{ $product->price }}</p><!-- /.shop-one__price -->
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
@@ -156,46 +157,51 @@
                 <h2 class="sec-title__title">Meet our clients</h2>
             </div>
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
-                "0": {
-                    "spaceBetween": 20,
-                    "slidesPerView": 1
-                },
-                "375": {
-                    "spaceBetween": 20,
-                    "slidesPerView": 1
-                },
-                "575": {
-                    "spaceBetween": 20,
-                    "slidesPerView": 3
-                },
-                "767": {
-                    "spaceBetween": 30,
-                    "slidesPerView": 4
-                },
-                "991": {
-                    "spaceBetween": 40,
-                    "slidesPerView": 5
-                },
-                "1199": {
-                    "spaceBetween": 40,
-                    "slidesPerView": 5
-                }
-            }}'>
+        "0": {
+            "spaceBetween": 20,
+            "slidesPerView": 1
+        },
+        "375": {
+            "spaceBetween": 20,
+            "slidesPerView": 1
+        },
+        "575": {
+            "spaceBetween": 20,
+            "slidesPerView": 3
+        },
+        "767": {
+            "spaceBetween": 30,
+            "slidesPerView": 4
+        },
+        "991": {
+            "spaceBetween": 40,
+            "slidesPerView": 5
+        },
+        "1199": {
+            "spaceBetween": 40,
+            "slidesPerView": 5
+        }
+    }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                        <img src="{{ asset('Frontend/assets/images/clients/Falcon-Yarns.png') }}" alt=""
+                            style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/silvertech.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                        <img src="{{ asset('Frontend/assets/images/clients/silvertech.png') }}" alt=""
+                            style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/sintex-industry.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                        <img src="{{ asset('Frontend/assets/images/clients/sintex-industry.png') }}" alt=""
+                            style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/skyewin.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                        <img src="{{ asset('Frontend/assets/images/clients/skyewin.png') }}" alt=""
+                            style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/vardhman.png') }}" alt="" style="width: auto;height: 180px;object-fit: contain;">
+                        <img src="{{ asset('Frontend/assets/images/clients/vardhman.png') }}" alt=""
+                            style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
 
                 </div>
@@ -266,40 +272,62 @@
                 <!--Start Contact Page Right-->
                 <div class="col-xl-12 col-lg-12">
                     <div class="contact-page__right">
-                        <form action="https://layerdrops.com/agriox/assets/inc/sendemail.php"
-                            class="comment-one__form contact-form-validated" novalidate="novalidate">
+                        <form action="{{ route('contact.store') }}" method="POST" class="comment-one__form ">
+                            @csrf
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Your name" name="name">
+                                        <input type="text" placeholder="Your name" name="name" required>
                                     </div>
+                                    @error('name')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="email" placeholder="Email address" name="email">
+                                        <input type="email" placeholder="Email address" name="email" required>
                                     </div>
+                                    @error('email')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" name="phone">
+                                        <input type="text" placeholder="Phone number" name="phone" required>
                                     </div>
+                                    @error('phone')
+                                        <p style="color:red">{{ $message }}</p>
+
+                                    @enderror
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="email" placeholder="Subject" name="Subject">
+                                        <input type="text" placeholder="Subject" name="title">
                                     </div>
+                                    @error('title')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="comment-form__input-box">
                                         <textarea name="message" placeholder="Write message"></textarea>
                                     </div>
+                                    @error('message')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                     <button type="submit" class="thm-btn comment-form__btn">Send a
                                         message</button>
+
                                 </div>
+
                             </div>
                         </form>
                     </div>

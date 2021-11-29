@@ -44,39 +44,62 @@
                 <!--Start Contact Page Right-->
                 <div class="col-xl-8 col-lg-8">
                     <div class="contact-page__right">
-                        <form action="https://layerdrops.com/agriox/assets/inc/sendemail.php"
-                            class="comment-one__form contact-form-validated" novalidate="novalidate">
+                        <form action="{{ route('contact.store') }}" method="POST" class="comment-one__form ">
+                            @csrf
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Your name" name="name">
+                                        <input type="text" placeholder="Your name" name="name" required>
                                     </div>
+                                    @error('name')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="email" placeholder="Email address" name="email">
+                                        <input type="email" placeholder="Email address" name="email" required>
                                     </div>
+                                    @error('email')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" name="phone">
+                                        <input type="text" placeholder="Phone number" name="phone" required>
                                     </div>
+                                    @error('phone')
+                                        <p style="color:red">{{ $message }}</p>
+
+                                    @enderror
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="comment-form__input-box">
-                                        <input type="email" placeholder="Subject" name="Subject">
+                                        <input type="text" placeholder="Subject" name="title">
                                     </div>
+                                    @error('title')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="comment-form__input-box">
                                         <textarea name="message" placeholder="Write message"></textarea>
                                     </div>
-                                    <button type="submit" class="thm-btn comment-form__btn">Send a message</button>
+                                    @error('message')
+                                        <p style="color:red">{{ $message }}</p>
+                                    @enderror
+                                    <button type="submit" class="thm-btn comment-form__btn">Send a
+                                        message</button>
+
                                 </div>
+
                             </div>
                         </form>
                     </div>

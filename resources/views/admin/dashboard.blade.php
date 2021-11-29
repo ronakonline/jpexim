@@ -136,15 +136,9 @@
                 },
 
             };
-            // </block:config>
 
-            module.exports = {
-                actions: [],
-                config: config,
-            };
         </script>
         <script>
-            // === include 'setup' then 'config' above ===
 
             const myChart = new Chart(
                 document.getElementById('myChart'),

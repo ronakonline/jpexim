@@ -39,6 +39,11 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('Frontend/assets/css/agriox.css') }}" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    @if (session('success'))
+    <script>
+        alert('{{ session('success') }}');
+    </script>
+    @endif
 </head>
 
 <body>
