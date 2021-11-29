@@ -106,7 +106,7 @@
                                                             <div class="media">
 
                                                                 <div class="media-body">
-                                                                    <h5 class="mb-0">{{ $image->title }}</h5>
+                                                                    <h5 class="mb-4">{{ $image->title }}</h5>
                                                                     <div class="col-xs-12">
                                                                         <img src="{{ asset('uploads/home_slider/' . $image->image) }}"
                                                                             alt="{{ $image->image }}" width="100%"

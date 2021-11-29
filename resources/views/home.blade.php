@@ -27,15 +27,13 @@
                                 <div class="col-lg-12">
                                     <div class="main-slider-inner">
                                         <div class="main-slider__content">
-                                            <span class="main-slider-tagline">We’re producing natural goods</span>
-                                            <h2 class="main-slider__title">Healthy <span>&</span> Fresh <br>
-                                                Organic Food</h2>
+                                            <h3 class="main-slider__title">{{ $slide->title }}</h3>
 
                                         </div>
-                                        <div class="main-slider__button-box"><a href="shop.html"
+                                        {{-- <div class="main-slider__button-box"><a href="shop.html"
                                                 class="thm-btn">shop
                                                 now</a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
