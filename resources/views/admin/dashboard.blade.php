@@ -79,7 +79,7 @@
                                     <h5>Monthly View</h5>
                                 </div>
                             </div>
-                            <div style="position: relative; height:50vh; ">
+                            <div style="position: relative; height:50vh; padding:20px ">
                                 <canvas id="myChart"></canvas>
                             </div>
 
