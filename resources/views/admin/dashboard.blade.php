@@ -79,9 +79,10 @@
                                     <h5>Monthly View</h5>
                                 </div>
                             </div>
-                            <div class="card-block-big">
-                                <div id="monthly-graph" style="height:250px"></div>
+                            <div style="position: relative; height:50vh; ">
+                                <canvas id="myChart"></canvas>
                             </div>
+
                         </div>
                     </div>
                     <!-- statustic-card start -->
@@ -92,12 +93,65 @@
     </div>
 
     @push('js')
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
+        <script>
+            //set label from visitorsbymonth
+            @php
+                $labels = $months;
+                $data = $views;
+            @endphp
+            const labels = {!! json_encode($labels) !!};
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Views',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: {!! json_encode($data) !!}
+                }]
+            };
+            // </block:setup>
 
-        <!-- gauge js -->
-        <script src="{{ asset('pages/widget/amchart/amcharts.js') }}"></script>
-        <script src="{{ asset('pages/widget/amchart/serial.js') }}"></script>
+            // <block:config:0>
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: true,
+                                color: "rgba(255,99,132,0.2)"
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                },
+
+            };
+            // </block:config>
+
+            module.exports = {
+                actions: [],
+                config: config,
+            };
+        </script>
+        <script>
+            // === include 'setup' then 'config' above ===
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+
 
     @endpush
 </x-app-layout>
