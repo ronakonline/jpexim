@@ -69,13 +69,23 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="form-group row">
 
+                                        <div class="col-sm-12">
+                                            <label class="col-form-label">Mini Description</label>
+                                            <textarea class="form-control" id="summernote" name="minidescription" placeholder="Enter description">{{ $product->minidescription }}</textarea>
+                                            @error('minidescription')
+                                                <span class="text-danger">{{ $message }}</span>
+
+                                            @enderror
+                                        </div>
+                                    </div>
 
                                     <div class="form-group row">
 
                                         <div class="col-sm-12">
                                             <label class="col-form-label">Description</label>
-                                            <textarea class="form-control" id="summernote" name="description" placeholder="Enter description">{{ $product->description }}</textarea>
+                                            <textarea class="form-control" id="summernote1" name="description" placeholder="Enter description">{{ $product->description }}</textarea>
                                             @error('description')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -145,6 +155,9 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
+                height: "150px"
+            });
+            $('#summernote1').summernote({
                 height: "250px"
             });
         });

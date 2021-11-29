@@ -27,6 +27,7 @@ class ProductController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
+            'minidescription' => 'required',
             'description' => 'required',
             'price' => 'required||numeric',
             'images' =>  'bail|required',
@@ -43,6 +44,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->title;
         $product->slug = $slug;
+        $product->minidescription = $request->minidescription;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->save();
@@ -109,11 +111,13 @@ class ProductController extends Controller
         } else {
             $this->validate($request, [
                 'title' => 'required',
+                'minidescription' => 'required',
                 'description' => 'required',
                 'price' => 'required||numeric',
             ]);
 
             $product->name = $request->title;
+            $product->minidescription = $request->minidescription;
             $product->description = $request->description;
             $product->price = $request->price;
             $product->save();
