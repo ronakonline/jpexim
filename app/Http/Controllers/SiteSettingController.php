@@ -26,4 +26,28 @@ class SiteSettingController extends Controller
         $settings->save();
         return redirect()->back()->with('success','Contact Settings Updated Successfully');
     }
+
+    public function site_settings(){
+        $settings = SiteSetting::all()->first();
+        return view('admin.sitesettings.site_settings',compact('settings'));
+    }
+
+    public function site_settings_store(Request $request){
+        //validate logo image
+        $this->validate($request,[
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        //upload logo
+        if($request->hasFile('logo')){
+            $logo = $request->file('logo');
+            $logo_name = $logo->getClientOriginalName();
+            $logo_name = time().$logo_name;
+            $logo->move('uploads/logo',$logo_name);
+        }
+        //save logo name to database
+        $settings = SiteSetting::all()->first();
+        $settings->logo = $logo_name;
+        $settings->save();
+        return redirect()->back()->with('success','Site Settings Updated Successfully');
+    }
 }

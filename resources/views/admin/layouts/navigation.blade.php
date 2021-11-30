@@ -74,6 +74,12 @@
                     <span class="pcoded-mtext">Contact Messages</span>
                 </a>
             </li>
+            <li class="{{ Route::is('admin.site-setting') ? 'active' : ' ' }}">
+                <a href="{{ route('admin.site-setting') }}">
+                    <span class="pcoded-micon"><i class="feather icon-mail"></i></span>
+                    <span class="pcoded-mtext">Site Settings</span>
+                </a>
+            </li>
         </ul>
 
     </div>

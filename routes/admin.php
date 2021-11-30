@@ -59,4 +59,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('admin/contact-messages',[ContactController::class,'list'])->name('admin.contact.list');
 
+    Route::get('admin/site-setting',[SiteSettingController::class,'site_settings'])->name('admin.site-setting');
+
+    Route::post('admin/site-setting',[SiteSettingController::class,'site_settings_store'])->name('admin.site-setting.store');
 });
