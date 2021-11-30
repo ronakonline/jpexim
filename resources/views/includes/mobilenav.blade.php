@@ -5,9 +5,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="/" aria-label="logo image"><img
-                    src="{{ asset('Frontend/assets/images/resources/mobilemenu_logo.png') }}" width="155"
-                    alt="" /></a>
+            <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo); }}" alt="" class="image-fluid logo"/></a>
         </div>
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>

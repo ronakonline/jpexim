@@ -1,3 +1,16 @@
+<style>
+    //responsive logo css
+    @media only screen and (max-width: 600px) {
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .logo {
+        width: 100%;
+        height: 80px;
+    }
+</style>
 <header class="main-header main-header--one  clearfix">
     <div class="main-header--one__wrapper">
         <div class="main-header--one__top clearfix">
@@ -43,7 +56,7 @@
                 <div class="main-header--one__bottom-inner">
                     <div class="main-header--one__bottom-left">
                         <div class="logo">
-                            <a href="/"><img src="{{ asset('Frontend/assets/images/logo/JP Exim B3.jpg'); }}" alt=""  height="80px"/></a>
+                            <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo); }}" alt="" class="image-fluid logo"/></a>
                         </div>
                     </div>
                     <nav class="main-menu main-menu--1">
