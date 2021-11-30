@@ -65,7 +65,7 @@
 
                             <div class="stricky-one-logo">
                                 <div class="logo">
-                                    <a href="/"><img src="{{ asset('Frontend/assets/images/logo/JP Exim B3.jpg'); }}" alt=""  height="80px"/></a>
+                                    <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo); }}" alt="" class="image-fluid logo"/></a>
                                 </div>
                             </div>
 
