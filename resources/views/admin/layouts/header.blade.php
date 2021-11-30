@@ -1,3 +1,11 @@
+<style>
+
+.logo {
+  width: auto;
+  height: 50px;
+  object-fit: cover;
+}
+</style>
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
 
@@ -5,8 +13,11 @@
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu"></i>
             </a>
-            <a href="index-1.htm">
-                <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="Theme-Logo">
+            <a href="{{ route('dashboard') }}">
+                <div class="logo">
+                 <img class="img-fluid logo" src="{{ asset('uploads/logo/'.$settings->logo) }}" alt="Theme-Logo">
+                {{-- <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="Theme-Logo"> --}}
+                </div>
             </a>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>

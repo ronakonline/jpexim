@@ -37,6 +37,14 @@ class SiteSettingController extends Controller
         $this->validate($request,[
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $settings = SiteSetting::all()->first();
+        //remove old logo
+        if($settings->logo != null){
+            $image_path = public_path().'/uploads/logo/'.$settings->logo;
+            if(file_exists($image_path)){
+                unlink($image_path);
+            }
+        }
         //upload logo
         if($request->hasFile('logo')){
             $logo = $request->file('logo');
@@ -45,7 +53,7 @@ class SiteSettingController extends Controller
             $logo->move('uploads/logo',$logo_name);
         }
         //save logo name to database
-        $settings = SiteSetting::all()->first();
+
         $settings->logo = $logo_name;
         $settings->save();
         return redirect()->back()->with('success','Site Settings Updated Successfully');

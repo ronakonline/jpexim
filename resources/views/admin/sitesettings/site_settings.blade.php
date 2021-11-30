@@ -65,7 +65,7 @@
                                             <div class="col-xs-12 mt-4">
                                                 <img src="{{ asset('uploads/logo/' . $settings->logo) }}"
                                                     alt="{{ $settings->logo }}" width="100%"
-                                                    height="300px" style="object-fit: cover" />
+                                                    style="object-fit: cover" class="image-fluid" />
                                             </div>
                                         </div>
 
