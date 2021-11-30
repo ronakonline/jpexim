@@ -33,7 +33,7 @@
                             </div>
                             <div class="about-three__content-box-inner">
                                 @if(!empty($about))
-                                <p>{{ $about->description }}
+                                <p>{!! $about->description !!}
                                 </p>
                                 @endif
 
