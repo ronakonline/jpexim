@@ -62,4 +62,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/site-setting',[SiteSettingController::class,'site_settings'])->name('admin.site-setting');
 
     Route::post('admin/site-setting',[SiteSettingController::class,'site_settings_store'])->name('admin.site-setting.store');
+
+    Route::post('admin/site-setting/favicon',[SiteSettingController::class,'store_favicon'])->name('admin.site-setting.favicon');
 });

@@ -58,4 +58,31 @@ class SiteSettingController extends Controller
         $settings->save();
         return redirect()->back()->with('success','Site Settings Updated Successfully');
     }
+
+    public function store_favicon(Request $request){
+        //validate logo image
+        $this->validate($request,[
+            'favicon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $settings = SiteSetting::all()->first();
+        //remove old logo
+        if($settings->favicon != null){
+            $image_path = public_path().'/uploads/logo/'.$settings->favicon;
+            if(file_exists($image_path)){
+                unlink($image_path);
+            }
+        }
+        //upload logo
+        if($request->hasFile('favicon')){
+            $favicon = $request->file('favicon');
+            $favicon_name = $favicon->getClientOriginalName();
+            $favicon_name = time().$favicon_name;
+            $favicon->move('uploads/logo',$favicon_name);
+        }
+        //save logo name to database
+
+        $settings->favicon = $favicon_name;
+        $settings->save();
+        return redirect()->back()->with('success','Site Settings Updated Successfully');
+    }
 }

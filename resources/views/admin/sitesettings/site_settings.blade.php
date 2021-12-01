@@ -81,6 +81,50 @@
                             </div>
                         </div>
 
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Add Favicon</h5>
+
+
+                                <div class="card-header-right">
+                                    <i class="icofont icofont-spinner-alt-5"></i>
+                                </div>
+
+                            </div>
+                            <div class="card-block">
+                                <h5 class="sub-title">Select Image</h5>
+                                <form method="POST" action="{{ route('admin.site-setting.favicon') }}"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Upload Image</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" name="favicon" class="form-control">
+                                                @error('favicon')
+                                                    <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-xs-12 mt-4 ml-5">
+                                                <img src="{{ asset('uploads/logo/' . $settings->favicon) }}"
+                                                    alt="{{ $settings->favicon }}" width="100%"
+                                                    style="object-fit: cover" class="image-fluid" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary ">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
