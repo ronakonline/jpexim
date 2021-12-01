@@ -24,8 +24,7 @@
                         <div class="about-three__content-box">
                             <div class="sec-title">
                                 <div class="icon">
-                                    <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}') }}"
-                                        alt="">
+                                    <img src="{{ asset('uploads/logo/'.$settings->favicon); }}" alt="">
                                 </div>
                                 <span class="sec-title__tagline"></span>
                                 <h2 class="sec-title__title">We are one.<br>
@@ -49,7 +48,7 @@
                     <!--Start About Three Img Box-->
                     <div class="col-xl-6 col-lg-5">
                         <div class="about-three__img-box">
-                            <img src="{{ asset('Frontend/assets/images/resources/about-3-icon-1-1.png') }}') }}"
+                            <img src="{{ asset('Frontend/assets/images/resources/about-3-icon-1-1.png') }}"
                                 class="about-three__img-icon" alt="">
                             <div class="about-three__img-box-img">
                                 <div class="about-three__img-box-img-inner">
@@ -83,7 +82,7 @@
         <div class="container">
             <div class="sec-title text-center">
                 <div class="icon">
-                    <img src="{{ asset('Frontend/assets/images/resources/sec-title-icon1.png') }}" alt="">
+                    <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="">
                 </div>
                 <span class="sec-title__tagline">Clients</span>
                 <h2 class="sec-title__title">Meet our clients</h2>

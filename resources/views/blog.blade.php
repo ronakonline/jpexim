@@ -42,7 +42,7 @@
                         <!--End Single Blog One-->
 
 
-                        <div class="tag-social-link">
+                        {{-- <div class="tag-social-link">
                             <div class="tag-social-link__tag">
                                 <div class="title">
                                     <h4>Share</h4>
@@ -58,7 +58,7 @@
                             <div class="tag-social-link__social-links">
 
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="news-details__pagenation">
                             <div class="row">

@@ -19,11 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12 shop-one__sorter">
-                            <p class="shop-one__product-count">Showing 1–2 of 2 results</p>
-                        </div><!-- /.col-lg-12 -->
-                    </div><!-- /.row -->
+
 
                     <div class="row">
                         @foreach ($products as $product)

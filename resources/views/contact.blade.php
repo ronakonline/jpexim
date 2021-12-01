@@ -31,10 +31,16 @@
                             service while offering our employees the best training.</p>
                         <div class="contact-page__social-link">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+
+                                @if(!empty($settings->facebook_url))
+                                <li><a href="{{ $settings->facebook_url }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                                @endif
+                                @if(!empty($settings->instagram_url))
+                                <li><a href="{{ $settings->instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                @endif
+                                @if(!empty($settings->email))
+                                <li><a href="mailto:{{ $settings->email; }}" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

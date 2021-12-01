@@ -7,11 +7,11 @@
     <title>JPExim</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180"
-        href="{{ asset('Frontend/assets/images/favicons/apple-touch-icon.png') }}" />
+        href="{{ asset('uploads/logo/'.$settings->favicon) }}" />
     <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('Frontend/assets/images/favicons/favicon-32x32.png') }}" />
+        href="{{ asset('uploads/logo/'.$settings->favicon) }}" />
     <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('Frontend/assets/images/favicons/favicon-16x16.png') }}" />
+        href="{{ asset('uploads/logo/'.$settings->favicon) }}" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -72,7 +72,7 @@
 <body>
 
     <div class="preloader">
-        <img class="preloader__image" width="60" src="{{ asset('Frontend/assets/images/loader.png') }}" alt="" />
+        <img class="preloader__image" width="60" src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" />
     </div>
 
     <!-- /.preloader -->
