@@ -9610,7 +9610,8 @@ Sidebar
   }
   /** Main Header One**/
   .main-header--one__top {
-    display: none;
+    /* display: none; */
+    width: 100%;
   }
   .main-header--one__bottom-right {
     display: none;
