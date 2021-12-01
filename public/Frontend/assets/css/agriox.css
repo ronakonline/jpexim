@@ -22,10 +22,10 @@
   --agriox-font-3: 'Shadows Into Light', cursive;
   --agriox-base: #C0C0C0;
   --agriox-base-rgb: 243, 169, 83;
-  --agriox-primary: #366ED8;
-  --agriox-primary-rgb: 54, 110, 216;
-  --agriox-secondary: #064ACB;
-  --agriox-secondary-rgb: 6, 74, 203;
+  --agriox-primary: #040b51;
+  --agriox-primary-rgb: 4, 11, 81;
+  --agriox-secondary: #040b51;
+  --agriox-secondary-rgb: 4, 11, 81;
   --agriox-color-1: #687469;
   --agriox-color-1-rgb: 104, 116, 105;
 }
@@ -1472,7 +1472,7 @@ button {
 .main-header--one__top {
   position: relative;
   display: block;
-  background: #064ACB;
+  background: #040b51;
 }
 
 .main-header--one__top .auto-container {
@@ -1515,7 +1515,7 @@ button {
 .main-header--one__top-left .social-link {
   position: relative;
   display: block;
-  background: #064ACB;
+  background: #040b51;
   padding: 5px 40px 4px;
   margin-left: 40px;
 }

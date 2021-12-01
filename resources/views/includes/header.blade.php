@@ -3,12 +3,12 @@
     @media only screen and (max-width: 600px) {
         .logo {
             width: 100%;
-            height: auto;
+            height: 60px;
         }
     }
     .logo {
         width: 100%;
-        height: 80px;
+        height: 60px;
     }
 </style>
 <header class="main-header main-header--one  clearfix">

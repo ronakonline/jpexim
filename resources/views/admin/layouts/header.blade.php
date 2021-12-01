@@ -2,7 +2,7 @@
 
 .logo {
   width: auto;
-  height: 50px;
+  height: 40px;
   object-fit: cover;
 }
 </style>
