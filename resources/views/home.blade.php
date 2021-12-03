@@ -188,7 +188,7 @@
                             style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/silvertech.png') }}" alt=""
+                        <img src="{{ asset('Frontend/assets/images/clients/sunny.png') }}" alt=""
                             style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
@@ -200,7 +200,7 @@
                             style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{ asset('Frontend/assets/images/clients/vardhman.png') }}" alt=""
+                        <img src="{{ asset('Frontend/assets/images/clients/mmgroup.png') }}" alt=""
                             style="width: auto;height: 180px;object-fit: contain;">
                     </div><!-- /.swiper-slide -->
 
