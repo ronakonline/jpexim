@@ -1,7 +1,7 @@
 <x-home-layout>
     <!--Page Header Start-->
-		<section class="page-header clearfix"
-        style="background-image: url({{ asset('Frontend/assets/images/backgrounds/page-header-bg.jpg'); }});">
+    <section class="page-header clearfix"
+        style="background-image: url({{ asset('Frontend/assets/images/backgrounds/page-header-bg.jpg') }});">
         <div class="container">
             <div class="page-header__inner text-center clearfix">
                 <ul class="thm-breadcrumb">
@@ -20,12 +20,12 @@
                 <div class="col-lg-6">
                     <div class="product-details__image product-slider">
                         @foreach ($product->images as $image)
-                            <img src="{{ asset('uploads/'.$image->image); }}" alt="" width="auto" height="auto">
+                            <img src="{{ asset('uploads/' . $image->image) }}" alt="" width="auto" height="auto">
                         @endforeach
                     </div><!-- /.product-details__image -->
                     <div class="product-nav" style="margin-top: 40px; margin-bottom:40px">
                         @foreach ($product->images as $image)
-                        <img src="{{ asset('uploads/'.$image->image); }}" alt="" width="auto" height="auto">
+                            <img src="{{ asset('uploads/' . $image->image) }}" alt="" width="auto" height="auto">
                         @endforeach
                     </div>
                 </div><!-- /.col-lg-6 -->
@@ -34,7 +34,11 @@
                         <div class="product-details__content__top">
                             <h3 class="product-details__content__name">{{ $product->name }}</h3>
                             <!-- /.product-details__content__name -->
-                            <div class="product-details__content__price">Rs {{ $product->price }}</div>
+                            @if (!empty($product->price))
+                                <div class="product-details__content__price">Rs {{ $product->price }}</div>
+
+                            @endif
+
                             <!-- /.product-details__content__price -->
                         </div><!-- /.product-details__content__top -->
 
