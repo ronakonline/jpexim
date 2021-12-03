@@ -84,7 +84,7 @@
                                     <h3>Great Infrastructure</h3>
                                     <p>JP Exim is well-equipped with technically advanced & latest machinery and has a
                                         streamlined production process in place. The integrated facility to manufacture
-                                        quality yarn is suited to manufacture both smaller and larger volumes.</p>
+                                        quality cotton bales and yarns is suited to manufacture both smaller and larger volumes.</p>
                                 </div><!-- /.features-three__list__content -->
                             </li>
                             <li>
@@ -99,9 +99,9 @@
                                 <i class="fa fa-check"></i>
                                 <div class="features-three__list__content">
                                     <h3>Quality Guarantee</h3>
-                                    <p>JP Exim ensure the supply of consistent quality yarn. Ultimately, the crunch
+                                    <p>JP Exim ensure the supply of consistent quality cotton bales and yarns. Ultimately, the crunch
                                         lies in the infusion of hi-tech, state-of-the-art machinery that aids in the
-                                        production of high quality 100% export quality yarn.</p>
+                                        production of high quality 100% export quality cotton bales and yarns.</p>
                                 </div><!-- /.features-three__list__content -->
                             </li>
                         </ul><!-- /.list-unstyle -->
