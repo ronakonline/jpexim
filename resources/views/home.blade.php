@@ -135,7 +135,11 @@
                                     <h3 class="shop-two__title"><a
                                             href="{{ route('product.view', $product->slug) }}">{{ $product->name }}</a>
                                     </h3>
+                                    @if(empty($product->price))
+                                    <p>{!! Str::substr($product->minidescription, 0, 100) !!}</p>
+                                    @else
                                     <p class="shop-two__price">Rs {{ $product->price }}</p><!-- /.shop-one__price -->
+                                    @endif
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
                         </div><!-- /.col-md-6 col-lg-3 -->

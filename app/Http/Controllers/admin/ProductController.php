@@ -27,9 +27,9 @@ class ProductController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
+            'price' => 'nullable|numeric',
             'minidescription' => 'required',
             'description' => 'required',
-            'price' => 'required||numeric',
             'images' =>  'bail|required',
             'images.*' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ], [
@@ -113,7 +113,7 @@ class ProductController extends Controller
                 'title' => 'required',
                 'minidescription' => 'required',
                 'description' => 'required',
-                'price' => 'required||numeric',
+                'price' => 'nullable||numeric',
             ]);
 
             $product->name = $request->title;

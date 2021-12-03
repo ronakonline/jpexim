@@ -33,7 +33,11 @@
                                 <div class="shop-one__content text-center">
                                     <h3 class="shop-one__title"><a href="{{ route('product.view',$product->slug) }}">{{ $product->name }}</a>
                                     </h3>
-                                    <p class="shop-one__price">Rs {{$product->price}}</p><!-- /.shop-one__price -->
+                                    @if(empty($product->price))
+                                    <p>{!! Str::substr($product->minidescription, 0, 100) !!}</p>
+                                    @else
+                                    <p class="shop-two__price">Rs {{ $product->price }}</p><!-- /.shop-one__price -->
+                                    @endif
                                 </div><!-- /.shop-one__content -->
                             </div><!-- /.shop-one__item -->
                         </div>
