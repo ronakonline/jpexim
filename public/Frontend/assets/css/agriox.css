@@ -10049,6 +10049,7 @@ Sidebar
   }
   .contact-page__contact-info-title {
     padding-right: 0px;
+    width: auto !important;
   }
   .contact-page__contact-info-list ul li .icon {
     margin-bottom: 20px;

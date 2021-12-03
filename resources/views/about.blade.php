@@ -137,23 +137,60 @@
     </section>
     <!--Company Logos One End-->
 
-    <div class="header-row" id="header-row" style="padding: 0px; overflow:hidden;">
-        <div class="container-fluid" style="padding: 0px;">
+
+
+
+
+
+    <!--Start Contact Page Contact Info-->
+    <section class="contact-page__contact-info clearfix">
+        <div class="auto-container">
             <div class="row">
-                <div class="col-xs-12">
-                    <a class="navbar-brand logo">
-                        <img src="{{ asset('Frontend/assets/images/about/Banner_2.jpg') }}" style="width: 100%;">
-                    </a>
+                <div class="col-xl-12">
+                    <div class="contact-page__contact-info-wrapper">
+                        <div class="contact-page__contact-info-title" style="width: 450px">
+                            <h2>JP Exim and group is a very well-known in Textile Industry</h2>
+                        </div>
+
+                        <div class="contact-page__contact-info-list">
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-map"></span>
+                                    </div>
+                                    <div class="title">
+                                        <span>Visit Our Store</span>
+                                        <p>{{ $settings->address }}</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email-1"></span>
+                                    </div>
+                                    <div class="title">
+                                        <span>Send Email</span>
+                                        <p><a href="mailto:{{ $settings->email }}">{{ $settings->email }}</a></p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon phone">
+                                        <span class="icon-phone-call-2"></span>
+                                    </div>
+                                    <div class="title">
+                                        <span>Call Anytime</span>
+                                        <p><a href="tel:{{ $settings->phone_no }}">{{ $settings->phone_no }}</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-
-
-
+    </section>
+    <!--End Contact Page Contact Info-->
 
 
 
