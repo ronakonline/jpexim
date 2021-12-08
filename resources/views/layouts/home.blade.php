@@ -72,7 +72,7 @@
 <body>
 
     <div class="preloader">
-        <img class="preloader__image" width="60" src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" />
+        <img class="preloader__image" width="60" src="{{ asset('uploads/logo/'.$settings->logo_loader) }}" alt="" />
     </div>
 
     <!-- /.preloader -->

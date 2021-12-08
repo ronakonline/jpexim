@@ -12,7 +12,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
                                 <div class="footer-widget__column footer-widget__about">
                                     <div class="footer-widget__about-logo">
-                                        <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo); }}" alt="" class="image-fluid logo"/></a>
+                                        <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo_light); }}" alt="" class="image-fluid logo"/></a>
                                     </div>
                                     <p class="footer-widget__about-text">JP Exim is a very well-known brand in Agriculture Sector since 1994</p>
                                     <div class="footer-widget__about-contact-box">

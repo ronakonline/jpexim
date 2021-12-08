@@ -55,19 +55,34 @@
                                     <div class="form-group">
 
                                         <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Upload Image</label>
+                                            <label class="col-sm-2 col-form-label">Dark Logo</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="logo" class="form-control">
                                                 @error('logo')
                                                     <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                            <div class="col-xs-12 mt-4">
-                                                <img src="{{ asset('uploads/logo/' . $settings->logo) }}"
-                                                    alt="{{ $settings->logo }}" width="100%"
-                                                    style="object-fit: cover" class="image-fluid" />
+                                            <label class="col-sm-2 col-form-label mt-4">Light Logo</label>
+                                            <div class="col-sm-10 mt-4">
+                                                <input type="file" name="logo_light" class="form-control">
+                                                @error('logo_light')
+                                                    <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-6">
+                                                    <img src="{{ asset('uploads/logo/' . $settings->logo) }}"
+                                                        alt="{{ $settings->logo }}" width="80%"
+                                                        style="object-fit: cover" class="image-fluid" />
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="{{ asset('uploads/logo/' . $settings->logo_light) }}"
+                                                        alt="{{ $settings->logo_light }}" width="80%"
+                                                        style="object-fit: cover" class="image-fluid" />
+                                                </div>
                                             </div>
                                         </div>
+
 
                                         <div class="form-group row">
                                             <div class="col-sm-10">
@@ -81,9 +96,11 @@
                             </div>
                         </div>
 
+
+
                         <div class="card">
                             <div class="card-header">
-                                <h5>Add Favicon</h5>
+                                <h5>Add Favicon & Loader</h5>
 
 
                                 <div class="card-header-right">
@@ -99,16 +116,28 @@
                                     <div class="form-group">
 
                                         <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Upload Image</label>
+                                            <label class="col-sm-2 col-form-label">Favicon Image</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="favicon" class="form-control">
                                                 @error('favicon')
                                                     <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
                                                 @enderror
                                             </div>
+                                            <label class="col-sm-2 col-form-label mt-4">Loader Image</label>
+                                            <div class="col-sm-10 mt-4">
+                                                <input type="file" name="loader" class="form-control">
+                                                @error('loader')
+                                                    <div class="alert alert-danger my-1 border-0">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                             <div class="col-xs-12 mt-4 ml-5">
                                                 <img src="{{ asset('uploads/logo/' . $settings->favicon) }}"
                                                     alt="{{ $settings->favicon }}" width="100%"
+                                                    style="object-fit: cover" class="image-fluid" />
+                                            </div>
+                                            <div class="col-xs-12 mt-4 ml-5">
+                                                <img src="{{ asset('uploads/logo/' . $settings->logo_loader) }}"
+                                                    alt="{{ $settings->logo_loader }}" width="100%"
                                                     style="object-fit: cover" class="image-fluid" />
                                             </div>
                                         </div>
