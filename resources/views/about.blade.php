@@ -48,11 +48,9 @@
                     <!--Start About Three Img Box-->
                     <div class="col-xl-6 col-lg-5">
                         <div class="about-three__img-box">
-                            <img src="{{ asset('Frontend/assets/images/resources/about-3-icon-1-1.png') }}"
-                                class="about-three__img-icon" alt="">
                             <div class="about-three__img-box-img">
                                 <div class="about-three__img-box-img-inner">
-                                    <img src="{{ asset('Frontend/assets/images/about/about-v3-img1.jpg') }}" alt="" />
+                                    <img src="{{ asset('Frontend/assets/images/about/about.jpg') }}" alt="" />
                                 </div>
                             </div>
                         </div>

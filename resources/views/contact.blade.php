@@ -1,7 +1,7 @@
 <x-home-layout>
         <!--Page Header Start-->
         <section class="page-header clearfix"
-        style="background-image: url({{ asset('Frontend/assets/images/about/Banner_3.jpg') }});">
+        style="background-image: url({{ asset('Frontend/assets/images/backgrounds/contact.jpg') }});">
         <div class="container">
             <div class="page-header__inner text-center clearfix">
                 <ul class="thm-breadcrumb">
