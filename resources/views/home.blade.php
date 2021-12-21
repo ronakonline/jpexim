@@ -72,7 +72,7 @@
                     <div class="features-three__content">
                         <div class="sec-title text-left">
                             <div class="icon">
-                                <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="">
+                                <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" height="32px" width="42px">
                             </div>
                             <span class="sec-title__tagline">Company benefits</span>
                             <h2 class="sec-title__title">Why Choose Us?</h2>
@@ -116,7 +116,7 @@
             <div class="container">
                 <div class="sec-title text-center" style="margin-bottom: 4rem">
                     <div class="icon">
-                        <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="">
+                        <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" height="32px" width="42px">
                     </div>
                     <span class="sec-title__tagline">Best for all of you</span>
                     <h2 class="sec-title__title">Introduse Our Products</h2>
@@ -155,7 +155,7 @@
         <div class="container">
             <div class="sec-title text-center">
                 <div class="icon">
-                    <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="">
+                    <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" height="32px" width="42px">
                 </div>
                 <span class="sec-title__tagline">Clients</span>
                 <h2 class="sec-title__title">Meet our clients</h2>
@@ -220,7 +220,7 @@
             <div class="container">
                 <div class="sec-title text-center">
                     <div class="icon">
-                        <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="">
+                        <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" height="32px" width="42px">
                     </div>
                     <span class="sec-title__tagline">from the blog</span>
                     <h2 class="sec-title__title">News & Articles</h2>

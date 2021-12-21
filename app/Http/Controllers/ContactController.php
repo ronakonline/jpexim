@@ -27,7 +27,7 @@ class ContactController extends Controller
         $contact->message = $request->input('message');
         $contact->save();
 
-        return redirect('/')->with('success', 'Your enquiry has been sent');
+        return redirect('/')->with('success', 'Thank you for contacting us \n\nYour enquiry has been sent! \n\nWe will get back to you shortly');
 
     }
 

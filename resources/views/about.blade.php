@@ -146,8 +146,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="contact-page__contact-info-wrapper">
-                        <div class="contact-page__contact-info-title" style="width: 450px">
-                            <h2>JP Exim and group is a very well-known in Textile Industry</h2>
+                        <div class="contact-page__contact-info-title" style="width: 250px">
+                            <h2>JP Exim</h2>
                         </div>
 
                         <div class="contact-page__contact-info-list">

@@ -14,7 +14,7 @@
                                     <div class="footer-widget__about-logo">
                                         <a href="/"><img src="{{ asset('uploads/logo/'.$settings->logo_light); }}" alt="" class="image-fluid logo"/></a>
                                     </div>
-                                    <p class="footer-widget__about-text">JP Exim is a very well-known brand in Agriculture Sector since 1994</p>
+                                    <p class="footer-widget__about-text">JP Exim and group is a very well-known in Textile Industry </p>
                                     <div class="footer-widget__about-contact-box">
                                         @if($settings->phone_no)
                                         <p class="phone"><a href="tel:{{ $settings->phone_no }}"><i
