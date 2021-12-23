@@ -41,6 +41,9 @@
                                 @if(!empty($settings->email))
                                 <li><a href="mailto:{{ $settings->email; }}" target="_blank"><i class="fa fa-envelope"></i></a></li>
                                 @endif
+                                <li><a href="https://www.linkedin.com/company/jp-exim/about/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i> </a></li>
+                                <li><a href="https://twitter.com/Jp_Exim" target="_blank"><i class="fab fa-twitter"></i> </a></li>
+                                {{-- <li><a href="#"><i class="fab fa-whatsapp"></i> </a></li> --}}
                             </ul>
                         </div>
                     </div>
