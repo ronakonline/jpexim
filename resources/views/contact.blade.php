@@ -138,7 +138,7 @@
                                     </div>
                                     <div class="title">
                                         <span>Visit Our Store</span>
-                                        <p>{{ $settings->address }}</p>
+                                        <p style="width:300px">{{ $settings->address }}</p>
                                     </div>
                                 </li>
 
