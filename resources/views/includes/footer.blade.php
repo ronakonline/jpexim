@@ -101,6 +101,8 @@
                                 @if($settings->instagram_url)
                                 <li><a href="{{ $settings->instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 @endif
+                                <li><a href="https://www.linkedin.com/company/jp-exim/about/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i> </a></li>
+                                <li><a href="https://twitter.com/Jp_Exim" target="_blank"><i class="fab fa-twitter"></i> </a></li>
                             </ul>
                         </div>
                     </div>
