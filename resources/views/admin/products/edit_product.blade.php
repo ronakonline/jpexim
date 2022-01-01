@@ -73,7 +73,7 @@
 
                                         <div class="col-sm-12">
                                             <label class="col-form-label">Mini Description</label>
-                                            <textarea class="form-control" id="summernote" name="minidescription" placeholder="Enter description">{{ $product->minidescription }}</textarea>
+                                            <textarea class="form-control"  name="minidescription" placeholder="Enter description">{{ $product->minidescription }}</textarea>
                                             @error('minidescription')
                                                 <span class="text-danger">{{ $message }}</span>
 
