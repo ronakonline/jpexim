@@ -223,7 +223,7 @@
                         <img src="{{ asset('uploads/logo/'.$settings->favicon) }}" alt="" height="32px" width="42px">
                     </div>
                     <span class="sec-title__tagline">from the blog</span>
-                    <h2 class="sec-title__title">News & Articles</h2>
+                    <h2 class="sec-title__title">Blogs & Articles</h2>
                 </div>
                 <div class="row">
                     @foreach ($blogs as $blog)

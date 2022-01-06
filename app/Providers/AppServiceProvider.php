@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
             $settings = SiteSetting::first();
-            $footer_blogs = Blog::offset(0)->limit(2)->get();
+            $footer_blogs = Blog::orderBy('id', 'desc')->offset(0)->limit(2)->get();
             view()->share(['settings' => $settings, 'footer_blogs' => $footer_blogs]);
     }
 }
