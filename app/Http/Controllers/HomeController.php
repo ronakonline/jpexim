@@ -15,7 +15,7 @@ class HomeController extends Controller
         $visitlog = VisitLog::save();
         $data['sliders'] = homeslider::all();
         $data['products'] = Product::offset(0)->limit(2)->get();
-        $data['blogs'] = Blog::offset(0)->limit(3)->get();
+        $data['blogs'] = Blog::orderBy('id', 'desc')->offset(0)->limit(3)->get();
         return view('home')->with($data);
     }
 }
